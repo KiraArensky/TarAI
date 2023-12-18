@@ -1,0 +1,23 @@
+nav {
+  padding: 16px 0;
+  background-color: #199BCA;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+nav ul li {
+display: inline-block;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+nav ul li:first-child {
+  margin-left: 0px;
+}
