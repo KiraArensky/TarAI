@@ -1,6 +1,6 @@
 import sqlite3
 import flask
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for, request, redirect
 from sqlite3 import *
 
 app = Flask(__name__)
@@ -20,9 +20,10 @@ con.commit()
 def Reg():
     return render_template('Reg.html')
 
+@app.route('/Future', methods=['POST', 'GET'])
+def Future():
 
-
-
+    return render_template('Future.html')
 
 
 
