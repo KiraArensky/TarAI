@@ -1,6 +1,6 @@
 import pymorphy2
 import random
-from ai_ChatGPT import ai_request
+from data.ai_ChatGPT import ai_request
 
 
 def morph_theme(theme):
