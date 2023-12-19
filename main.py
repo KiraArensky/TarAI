@@ -8,6 +8,8 @@ from data import db_session
 from data.users import User
 from data.loginform import LoginForm
 from data.regform import RegisterForm
+from data.aiform import Ai
+from data.ai_ChatGPT import ai_request
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'taro_ai'
@@ -80,6 +82,14 @@ def log():
 def menu():
     return render_template('Menu.html')
 
+@app.route('/ai', methods=['GET', 'POST'])
+def ai():
+    form = Ai()
+    if form.validate_on_submit():
+        ai_req = form.ai_req.data
+        ai_resp = ai_request(ai_req)
+        return render_template('Ai.html', form=form, ai_resp=ai_resp)
+    return render_template('Ai.html', form=form, ai_resp="None")
 
 # @app.route('/<login>')
 # def user(login):
@@ -89,13 +99,13 @@ def menu():
 #         flash('User ' + login + ' not found.')
 #         return redirect('/login')
 #     return render_template('user.html', ser=user)
-
-
-@app.route('/logout')
-@login_required
-def logout():
-    logout_user()
-    return redirect("/")
+#
+#
+# @app.route('/logout')
+# @login_required
+# def logout():
+#     logout_user()
+#     return redirect("/")
 
 
 if __name__ == '__main__':
