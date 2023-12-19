@@ -61,7 +61,12 @@ def reg():
         return redirect('/login')
     return render_template('Reg.html', title='Регистрация', form=form)
 
+  
+@app.route('/Future', methods=['POST', 'GET'])
+def Future():
+    return render_template('Future.html')
 
+  
 @app.route('/login', methods=['GET', 'POST'])
 def log():
     form = LoginForm()
@@ -81,6 +86,7 @@ def log():
 @app.route('/menu', methods=['GET', 'POST'])
 def menu():
     return render_template('Menu.html')
+
 
 @app.route('/ai', methods=['GET', 'POST'])
 def ai():
