@@ -10,8 +10,10 @@
       <ul><h2>
         <li><a href="Future">Future</a></li>
         <li><a href="Menu">About</a></li>
-        <li><a href="Profile">Profile</a></li>
-        <li><a href="ai">Ai</a></li>
+          <li><a href="ai">Ai</a></li>
+          <br><br><br>
+        <li><a href="{{ url_for('user', login = current_user.login) }}">Profile</a></li>
+                  <li><a href="/logout">Выйти</a></li>
       </h2></ul>
     </nav>
     {% block content %}
