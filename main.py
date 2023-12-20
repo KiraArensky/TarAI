@@ -100,6 +100,19 @@ def ai():
 @app.route('/Profile')
 def Profile():
     return render_template("Profile.html")
+
+@app.route('/Relation')
+def Relation():
+    return render_template("Relation.html")
+
+@app.route('/Career')
+def Career():
+    return render_template("Career.html")
+
+@app.route('/Money')
+def Money():
+    return render_template("Money.html")
+
 # @app.route('/<login>')
 # def user(login):
 #     db_sess = db_session.create_session()

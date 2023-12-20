@@ -1,7 +1,14 @@
+body{
+background: #696969
+}
+
 nav {
-z-index:9999;
-  padding: 16px 0;
+z-index:3 ;
+  padding: 10px 0;
   background-color: #199BCA;
+margin-top: -8px;
+margin-left: -8px;
+margin-right: -8px
 
 }
 
@@ -19,7 +26,7 @@ a{
 }
 
 .a1{
-  color: Purple;
+  color: #FFD700;
   text-decoration: none;
 }
 nav ul li {
@@ -31,6 +38,7 @@ display: inline-block;
 nav ul li:first-child {
 z-index:9999;
   margin-left: 0px;
+    justify-content: center;
 }
 
 .Centre_Future_parent {
@@ -43,24 +51,25 @@ z-index:9999;
 }
 
 .Centre_Future_child {
+  color: #FFD700;
 font-size: 40PX;
-width: 600px;
-  z-index: -1;
-  border: 2px solid black;
-  height: 100px;
+width: 530px;
+  z-index: 1;
+  height: 70px;
 text-align: center
 }
 
 .Centre_Future_child_form {
 font-size: 40PX;
   z-index: -1;
-  border: 2px solid black;
-  height: 600px;
-
+  height: 550px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 table {
-   width: 600px;
+   width: 500px;
 }
 
 tr{
@@ -68,13 +77,20 @@ height: 200px
 }
 
 .block {
-
   z-index = -1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   }
+
+.btn_border{
+z-index: 0;
+
+  border-radius: 40px;
+  height: 620px;
+  background: #fefffa6b
+}
 
 .Centre_Registr_child_form {
 font-size: 40PX;
@@ -119,3 +135,13 @@ height: 70px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.btn_theme{
+background: #FF6347;
+border-radius: 40px;
+height: 100px;
+padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
