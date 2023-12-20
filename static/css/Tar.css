@@ -1,11 +1,11 @@
 body{
-background: #696969
+background: #ffffff
 }
 
 nav {
 z-index:3 ;
   padding: 10px 0;
-  background-color: #199BCA;
+  background-color: #000000;
 margin-top: -8px;
 margin-left: -8px;
 margin-right: -8px
@@ -21,12 +21,12 @@ z-index:9999;
   text-align: center;
 }
 a{
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
 .a1{
-  color: #FFD700;
+  color: black;
   text-decoration: none;
 }
 nav ul li {
@@ -51,7 +51,7 @@ z-index:9999;
 }
 
 .Centre_Future_child {
-  color: #FFD700;
+  color: #000000;
 font-size: 40PX;
 width: 530px;
   z-index: 1;
@@ -89,7 +89,7 @@ z-index: 0;
 
   border-radius: 40px;
   height: 620px;
-  background: #fefffa6b
+  background: #d1d1d1
 }
 
 .Centre_Registr_child_form {
@@ -136,10 +136,10 @@ height: 70px;
 }
 
 .btn_theme{
-background: #FF6347;
-border-radius: 40px;
+background: #E7e7e7;
+border-radius: 30px;
 height: 100px;
-padding: 10px;
+padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
