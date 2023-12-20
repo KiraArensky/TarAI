@@ -60,7 +60,7 @@ def log():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             session['id'] = user.id
-            return redirect('/Profile')
+            return redirect('/menu')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
                                form=form)
@@ -91,25 +91,29 @@ def ai():
 
 
 @app.route('/Relation')
+@login_required
 def Relation():
     return render_template("Relation.html")
 
 @app.route('/Career')
+@login_required
 def Career():
     return render_template("Career.html")
 
 @app.route('/Money')
+@login_required
 def Money():
     return render_template("Money.html")
 
-@app.route('/<login>')
-def user(login):
-    db_sess = db_session.create_session()
-    user = db_sess.query(User).filter(User.login == login).first()
+@app.route('/Profile')
+@login_required
+def user():
+    # db_sess = db_session.create_session()
+    # user = db_sess.query(User).filter(User.login == ).first()
     if user == None:
-        flash('User ' + login + ' not found.')
+        flash('User not found.')
         return redirect('/login')
-    return render_template('Profile.html', user=user)
+    return render_template('Profile.html')
 
 
 @app.route('/logout')
