@@ -1,15 +1,13 @@
-import os
-import sqlite3
 from flask import *
-from sqlite3 import *
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-
+from flask_login import LoginManager, login_user, login_required, logout_user
 from data import db_session
+from data.donate import buy_pay, im_donate
 from data.users import User
 from data.loginform import LoginForm
 from data.regform import RegisterForm
 from data.aiform import Ai
 from data.ai_ChatGPT import ai_request
+from webbrowser import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'taro_ai'
@@ -60,6 +58,7 @@ def log():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             session['id'] = user.id
+            session['login'] = user.login
             return redirect('/menu')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
@@ -108,12 +107,7 @@ def Money():
 @app.route('/Profile')
 @login_required
 def user():
-    # db_sess = db_session.create_session()
-    # user = db_sess.query(User).filter(User.login == ).first()
-    if user == None:
-        flash('User not found.')
-        return redirect('/login')
-    return render_template('Profile.html')
+    return render_template('Profile.html', login=session['login'])
 
 
 @app.route('/logout')
@@ -126,7 +120,10 @@ def logout():
 @app.route('/donate')
 @login_required
 def donate():
-    return redirect("/")
+    url_donate = buy_pay(session['login'])
+    open_new(url_donate)
+    im_donate(session['login'])
+    return redirect("Donate.html")
 
 
 if __name__ == '__main__':
