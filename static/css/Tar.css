@@ -159,6 +159,8 @@ margin-left: 20px
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  background: #e7e7e7;
+  border-radius: 40px
 }
 
 .btn_theme{
