@@ -47,7 +47,7 @@ def reg():
         user.set_password(form.password.data)
         db_sess.add(user)
         db_sess.commit()
-        return redirect('/login')
+        return redirect('/Profile')
     return render_template('Reg.html', title='Регистрация', form=form)
 
 
@@ -60,7 +60,7 @@ def log():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             session['id'] = user.id
-            return redirect("/menu")
+            return redirect('/Profile')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
                                form=form)
@@ -89,6 +89,18 @@ def ai():
         return render_template('Ai.html', form=form, ai_resp=ai_resp)
     return render_template('Ai.html', form=form, ai_resp="None")
 
+
+@app.route('/Relation')
+def Relation():
+    return render_template("Relation.html")
+
+@app.route('/Career')
+def Career():
+    return render_template("Career.html")
+
+@app.route('/Money')
+def Money():
+    return render_template("Money.html")
 
 @app.route('/<login>')
 def user(login):

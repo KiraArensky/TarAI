@@ -9,12 +9,14 @@
 </head>
 <body>
 <div>
-    <h1>Регистрация</h1>
+    <div class = 'block'>
+        <div class="Centre_Registr_child_form">
+            <h1 class="Registr">Регистрация</h1>
     <form action="" method="post" enctype="multipart/form-data" class="login_form">
         {{ form.hidden_tag() }}
         <p>
-            {{ form.login.label }}<br>
-            {{ form.login(class="form-control") }}<br>
+            <div class="Registr_text">{{ form.login.label }}</div><br>
+            <div class = 'Registr_form'>{{ form.login(class="form-control1111") }}</div><br>
             {% for error in form.login.errors %}
         <p class="alert alert-danger" role="alert">
             {{ error }}
@@ -22,8 +24,8 @@
         {% endfor %}
         </p>
         <p>
-            {{ form.password.label }}<br>
-            {{ form.password(class="form-control", type="password") }}<br>
+        <div class="Registr_text">{{ form.password.label }}</div><br>
+        <div class = 'Registr_form'>{{ form.password(class="form-control1111", type="password") }}</div><br>
             {% for error in form.password.errors %}
         <p class="alert alert-danger" role="alert">
             {{ error }}
@@ -31,17 +33,25 @@
         {% endfor %}
         </p>
         <p>
-            {{ form.password_again.label }}<br>
-            {{ form.password_again(class="form-control", type="password") }}<br>
+        <div class="Registr_text">{{ form.password_again.label }}</div><br>
+        <div class = 'Registr_form'>{{ form.password_again(class="form-control1111", type="password") }}</div><br>
             {% for error in form.password_again.errors %}
         <p class="alert alert-danger" role="alert">
             {{ error }}
         </p>
         {% endfor %}
         </p>
-        <p>{{ form.submit(type="submit", class="btn btn-outline-success") }}</p>
-        {{message}}
+        <div class="row">
+        <p class ='col-sm'>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+<!--            #btn btn-outline-success-->
+            <div class="col-sm">
+                <a class="btn btn-primary " href="/login">Войти</a>
+            </div>
+        </div>
+            {{message}}
     </form>
+            </div>
+    </div>
 </div>
 </body>
 </html>

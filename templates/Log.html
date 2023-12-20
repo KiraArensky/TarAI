@@ -8,13 +8,14 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-<div>
-    <h1>Войдите в аккаунт</h1>
+<div class = 'block'>
+    <div class="Centre_Registr_child_form">
+    <h1 class="Registr">Войдите в аккаунт</h1>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
-            {{ form.login.label }}<br>
-            {{ form.login() }}<br>
+            <div class="Registr_text">{{ form.login.label }}</div><br>
+            <div class = 'Registr_form'>{{ form.login(class='form-control1111') }}</div><br>
             {% for error in form.login.errors %}
         <div class="alert alert-danger" role="alert">
             {{ error }}
@@ -22,8 +23,8 @@
         {% endfor %}
         </p>
         <p>
-            {{ form.password.label }}<br>
-            {{ form.password(class="form-control", type="password") }}<br>
+            <div class="Registr_text">{{ form.password.label }}</div><br>
+            <div class ='Registr_form'>{{ form.password(class="form-control1111", type="password") }}</div><br>
             {% for error in form.password.errors %}
         <div class="alert alert-danger" role="alert">
             {{ error }}
@@ -33,7 +34,7 @@
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <div class="row">
             <div class="col-sm">
-                <p>{{ form.submit(type="submit", class="btn btn-outline-success") }}</p>
+                <p>{{ form.submit(type="submit", class="btn btn-primary ") }}</p>
             </div>
             <div class="col-sm">
                 <a class="btn btn-primary " href="/registr">Зарегистрироваться</a>
@@ -42,5 +43,6 @@
         <div>{{ message }}</div>
     </form>
 </div>
+    </div>
 </body>
 </html>
