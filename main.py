@@ -60,7 +60,7 @@ def log():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             session['id'] = user.id
-            return redirect('/menu')
+            return redirect('/Profile')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
                                form=form)
