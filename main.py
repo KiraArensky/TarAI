@@ -13,17 +13,6 @@ from data.ai_ChatGPT import ai_request
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'taro_ai'
-#
-#
-# con = sqlite3.connect('TarAi_Data.db', check_same_thread=False)
-# cursor = con.cursor()
-#
-# cursor.execute("""CREATE TABLE IF NOT EXISTS Users(
-#                 id INTEGER,
-#                 login TEXT,
-#                 password TEXT
-#                 )""")
-# con.commit()
 login_manager = LoginManager()
 login_manager.init_app(app)
 
@@ -79,53 +68,49 @@ def log():
 
 
 @app.route('/menu', methods=['GET', 'POST'])
-def menu(login=current_user.login):
-    db_sess = db_session.create_session()
-    user = db_sess.query(User).filter(User.login == login).first()
-    return render_template('Menu.html', user=user)
+@login_required
+def menu():
+    return render_template('Menu.html')
 
 
 @app.route('/Future', methods=['POST', 'GET'])
-def Future(login=current_user.login):
-    db_sess = db_session.create_session()
-    user = db_sess.query(User).filter(User.login == login).first()
-    return render_template('Future.html', login=user)
+@login_required
+def Future():
+    return render_template('Future.html')
 
 
 @app.route('/ai', methods=['GET', 'POST'])
-def ai(login=current_user.login):
-    db_sess = db_session.create_session()
-    user = db_sess.query(User).filter(User.login == login).first()
+@login_required
+def ai():
     form = Ai()
     if form.validate_on_submit():
         ai_req = form.ai_req.data
         ai_resp = ai_request(ai_req)
         return render_template('Ai.html', form=form, ai_resp=ai_resp)
-    return render_template('Ai.html', form=form, ai_resp="None", user=user)
+    return render_template('Ai.html', form=form, ai_resp="None")
 
 
-@app.route('/<login>', methods=['POST', 'GET'])
-def profile():
+@app.route('/<login>')
+def user(login):
     db_sess = db_session.create_session()
     user = db_sess.query(User).filter(User.login == login).first()
-    return render_template('Profile.html')
+    if user == None:
+        flash('User ' + login + ' not found.')
+        return redirect('/login')
+    return render_template('Profile.html', user=user)
 
 
-# @app.route('/<login>')
-# def user(login):
-#     db_sess = db_session.create_session()
-#     user = db_sess.query(User).filter(User.login == login).first()
-#     if user == None:
-#         flash('User ' + login + ' not found.')
-#         return redirect('/login')
-#     return render_template('user.html', ser=user)
-#
-#
-# @app.route('/logout')
-# @login_required
-# def logout():
-#     logout_user()
-#     return redirect("/")
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
+
+
+@app.route('/donate')
+@login_required
+def donate():
+    return redirect("/")
 
 
 if __name__ == '__main__':
