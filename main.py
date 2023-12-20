@@ -2,7 +2,7 @@ import os
 import sqlite3
 from flask import *
 from sqlite3 import *
-from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
 from data import db_session
 from data.users import User
@@ -61,12 +61,7 @@ def reg():
         return redirect('/login')
     return render_template('Reg.html', title='Регистрация', form=form)
 
-  
-@app.route('/Future', methods=['POST', 'GET'])
-def Future():
-    return render_template('Future.html')
 
-  
 @app.route('/login', methods=['GET', 'POST'])
 def log():
     form = LoginForm()
@@ -84,18 +79,37 @@ def log():
 
 
 @app.route('/menu', methods=['GET', 'POST'])
-def menu():
-    return render_template('Menu.html')
+def menu(login=current_user.login):
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter(User.login == login).first()
+    return render_template('Menu.html', user=user)
+
+
+@app.route('/Future', methods=['POST', 'GET'])
+def Future(login=current_user.login):
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter(User.login == login).first()
+    return render_template('Future.html', login=user)
 
 
 @app.route('/ai', methods=['GET', 'POST'])
-def ai():
+def ai(login=current_user.login):
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter(User.login == login).first()
     form = Ai()
     if form.validate_on_submit():
         ai_req = form.ai_req.data
         ai_resp = ai_request(ai_req)
         return render_template('Ai.html', form=form, ai_resp=ai_resp)
-    return render_template('Ai.html', form=form, ai_resp="None")
+    return render_template('Ai.html', form=form, ai_resp="None", user=user)
+
+
+@app.route('/<login>', methods=['POST', 'GET'])
+def profile():
+    db_sess = db_session.create_session()
+    user = db_sess.query(User).filter(User.login == login).first()
+    return render_template('Profile.html')
+
 
 # @app.route('/<login>')
 # def user(login):
