@@ -9,50 +9,69 @@
 </head>
 <body>
 <div>
-    <div class = 'block'>
+    <div class='block'>
         <div class="Centre_Registr_child_form">
             <h1 class="Registr">Регистрация</h1>
-    <div class="btn_border1">
-        <form action="" method="post" enctype="multipart/form-data" class="login_form">
-        {{ form.hidden_tag() }}
-        <p>
-            <div class="Registr_text">{{ form.login.label }}</div><br>
-            <div class = 'Registr_form'>{{ form.login(class="form-control1111") }}</div><br>
-            {% for error in form.login.errors %}
-        <p class="alert alert-danger" role="alert">
-            {{ error }}
-        </p>
-        {% endfor %}
-        </p>
-        <p>
-        <div class="Registr_text">{{ form.password.label }}</div><br>
-        <div class = 'Registr_form'>{{ form.password(class="form-control1111", type="password") }}</div><br>
-            {% for error in form.password.errors %}
-        <p class="alert alert-danger" role="alert">
-            {{ error }}
-        </p>
-        {% endfor %}
-        </p>
-        <p>
-        <div class="Registr_text">{{ form.password_again.label }}</div><br>
-        <div class = 'Registr_form'>{{ form.password_again(class="form-control1111", type="password") }}</div><br>
-            {% for error in form.password_again.errors %}
-        <p class="alert alert-danger" role="alert">
-            {{ error }}
-        </p>
-        {% endfor %}
-        </p>
-        <div class="row">
-        <p class ='col-sm1'>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
-<!--            #btn btn-outline-success-->
-            <div class="col-sm2">
-                <a class="btn1 btn-primary " href="/login">Войти</a>
+            <div class="btn_border1">
+                <form action="" method="post" enctype="multipart/form-data" class="login_form">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        <label for="picture">Аватарка</label>
+                        <input type="file" class="form-control-file" id="picture" name="file" accept="image/*">
+                    </div>
+                    <p>
+                        {{ form.name.label }}<br>
+                        {{ form.name(class="form-control") }}<br>
+                        {% for error in form.name.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                    </p>
+                    <p>
+                    <div class="Registr_text">{{ form.login.label }}</div>
+                    <br>
+                    <div class='Registr_form'>{{ form.login(class="form-control1111") }}</div>
+                    <br>
+                    {% for error in form.login.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                    </p>
+                    <p>
+                    <div class="Registr_text">{{ form.password.label }}</div>
+                    <br>
+                    <div class='Registr_form'>{{ form.password(class="form-control1111", type="password") }}</div>
+                    <br>
+                    {% for error in form.password.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                    </p>
+                    <p>
+                    <div class="Registr_text">{{ form.password_again.label }}</div>
+                    <br>
+                    <div class='Registr_form'>{{ form.password_again(class="form-control1111", type="password") }}</div>
+                    <br>
+                    {% for error in form.password_again.errors %}
+                    <p class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </p>
+                    {% endfor %}
+                    </p>
+                    <div class="row">
+                        <p class='col-sm1'>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+                        <!--            #btn btn-outline-success-->
+                        <div class="col-sm2">
+                            <a class="btn1 btn-primary " href="/login">Войти</a>
+                        </div>
+                    </div>
+                    {{message}}
+                </form>
             </div>
         </div>
-            {{message}}
-    </form>
-    </div>
-            </div>
     </div>
 </div>
 </body>

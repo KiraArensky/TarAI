@@ -1,3 +1,4 @@
+import os
 from flask import *
 from sqlite3 import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
@@ -44,6 +45,7 @@ def reg():
                                    message="Такой логин занят")
         user = User(
             login=form.login.data,
+            name=form.name.data,
         )
         user.set_password(form.password.data)
         db_sess.add(user)
@@ -52,6 +54,15 @@ def reg():
             login_user(user)
             session['id'] = user.id
             session['login'] = user.login
+        try:
+            f = request.files['picture']
+            split_tup = os.path.splitext(f.filename)
+            file_extension = split_tup[1]
+            filename = f'{str(user.id)}{file_extension}'
+            f.save(os.path.join('static/user_pic', filename))
+            user.avatar(user, db_sess, filename)
+        except:
+            user.picture = 'static/user_pic/unnamed.jpeg'
         return redirect('/Profile')
     return render_template('Reg.html', title='Регистрация', form=form)
 

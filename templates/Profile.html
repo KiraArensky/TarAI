@@ -1,19 +1,18 @@
 {% extends "Base.html" %}
 {% block content %}
-
 <div>
     <div class="row">
         <div class="col-sm">
-            <p>{{ login }}</p>
+            <td><img class="rounded-circle" src="{{ user.picture }}"></td>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <div class="col-sm">
+            <p>{{ login }}</p>
+            <p>Имя: {{user.about}}</p>
+        </div>
+    </div>
+</div>
+<hr>
+{% endfor %}
         <a href="#">Донат</a>
     </div>
 </div>
