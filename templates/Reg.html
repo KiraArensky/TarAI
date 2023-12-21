@@ -15,10 +15,6 @@
             <div class="btn_border1">
                 <form action="" method="post" enctype="multipart/form-data" class="login_form">
                     {{ form.hidden_tag() }}
-                    <div class="form-group">
-                        <label for="picture">Аватарка</label>
-                        <input type="file" class="form-control-file" id="picture" name="file" accept="image/*">
-                    </div>
                     <p>
                         {{ form.name.label }}<br>
                         {{ form.name(class="form-control") }}<br>

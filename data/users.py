@@ -17,10 +17,9 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
                               index=True, unique=True, nullable=True)
     hashed_password = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    created_date = sqlalchemy.Column(sqlalchemy.DateTime,
-                                     default=datetime.datetime.now)
     picture = sqlalchemy.Column(sqlalchemy.String,
                                 index=True, unique=True, nullable=True)
+
     def set_password(self, password):
         self.hashed_password = generate_password_hash(password)
 
@@ -37,5 +36,4 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
         us.picture = f'static/user_pic/{filename}'
         os.remove(f'static/user_pic/{filename}')
         img.save(f'static/user_pic/{filename}', quality=95)
-        us.created_date = datetime.datetime.now()
         db.commit()

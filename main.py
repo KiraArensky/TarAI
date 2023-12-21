@@ -2,6 +2,8 @@ import os
 from flask import *
 from sqlite3 import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
+
+from data.picform import Pic
 from data.random import RandomCard
 from data import db_session
 from data.donate import buy_pay, im_donate
@@ -54,15 +56,9 @@ def reg():
             login_user(user)
             session['id'] = user.id
             session['login'] = user.login
-        try:
-            f = request.files['picture']
-            split_tup = os.path.splitext(f.filename)
-            file_extension = split_tup[1]
-            filename = f'{str(user.id)}{file_extension}'
-            f.save(os.path.join('static/user_pic', filename))
-            user.avatar(user, db_sess, filename)
-        except:
-            user.picture = 'static/user_pic/unnamed.jpeg'
+            session['name'] = user.name
+            user.avatar(user, db_sess, 'unnamed.jpg')
+            session['picture'] = user.picture
         return redirect('/Profile')
     return render_template('Reg.html', title='Регистрация', form=form)
 
@@ -110,23 +106,43 @@ def ai():
 @app.route('/Relation')
 @login_required
 def Relation():
-
     return render_template("Relation.html")
+
 
 @app.route('/Career')
 @login_required
 def Career():
     return render_template("Career.html")
 
+
 @app.route('/Money')
 @login_required
 def Money():
     return render_template("Money.html")
 
+
 @app.route('/Profile')
 @login_required
 def user():
-    return render_template('Profile.html', login=session['login'])
+    form = Pic()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        user = db_sess.query(User).filter(User.login == session['login']).first()
+        try:
+            f = request.files['picture']
+            split_tup = os.path.splitext(f.filename)
+            file_extension = split_tup[1]
+            filename = f'{str(user.id)}{file_extension}'
+            f.save(os.path.join('static/user_pic/', filename))
+            user.avatar(user, db_sess, filename)
+            session['picture'] = user.picture
+        except:
+            user.avatar(user, db_sess, 'unnamed.jpg')
+            session['picture'] = user.picture
+        return render_template('Profile.html', login=session['login'], name=session['name'], picture=session['picture'],
+                               form=form)
+    return render_template('Profile.html', login=session['login'], name=session['name'], picture=session['picture'],
+                           form=form)
 
 
 @app.route('/logout')
@@ -134,6 +150,7 @@ def user():
 def logout():
     logout_user()
     return redirect("/")
+
 
 #
 # @app.route('/donate')
