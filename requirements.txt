@@ -9,3 +9,4 @@ requests
 SQLAlchemy  
 SQLAlchemy-serializer
 WTForms  
+yoomoney
