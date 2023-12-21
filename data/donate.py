@@ -3,18 +3,9 @@ import os
 import random
 import string
 from datetime import date
-
-try:
-    import sqlite3
-    import telebot
-    from yoomoney import Quickpay
-    from yoomoney import Client
-except:
-    os.system("pip install yoomoney")
-    os.system("pip install sqlite3")
-    from yoomoney import Quickpay
-    from yoomoney import Client
-    import sqlite3
+from yoomoney import Quickpay
+from yoomoney import Client
+import sqlite3
 
 
 def buy_pay(login=None):

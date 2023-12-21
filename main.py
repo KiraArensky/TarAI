@@ -116,14 +116,12 @@ def logout():
     logout_user()
     return redirect("/")
 
-
-@app.route('/donate')
-@login_required
-def donate():
-    url_donate = buy_pay(session['login'])
-    open_new(url_donate)
-    im_donate(session['login'])
-    return redirect("Donate.html")
+#
+# @app.route('/donate')
+# @login_required
+# def donate():
+#     im_donate(session['login'])
+#     return redirect("Donate.html")
 
 
 if __name__ == '__main__':
