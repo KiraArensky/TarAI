@@ -3,13 +3,14 @@ import sqlite3
 from flask import *
 from sqlite3 import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-
+from data.random import RandomCard
 from data import db_session
 from data.users import User
 from data.loginform import LoginForm
 from data.regform import RegisterForm
 from data.aiform import Ai
 from data.ai_ChatGPT import ai_request
+import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'taro_ai'
@@ -93,6 +94,7 @@ def ai():
 @app.route('/Relation')
 @login_required
 def Relation():
+
     return render_template("Relation.html")
 
 @app.route('/Career')

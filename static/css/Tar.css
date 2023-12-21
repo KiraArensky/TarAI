@@ -1,5 +1,5 @@
 body{
-    background: #ffffff
+    background: #ffffff;
 }
 
 nav {
@@ -8,7 +8,7 @@ nav {
     background-color: #000000;
     margin-top: -8px;
     margin-left: -8px;
-    margin-right: -8px
+    margin-right: -8px;
 }
 
 nav ul {
@@ -54,7 +54,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 38px
+    height: 38px;
 }
 
 .Centre_Future_parent {
@@ -72,7 +72,7 @@ a{
     width: 530px;
     z-index: 1;
     height: 70px;
-    text-align: center
+    text-align: center;
 }
 
 .Centre_Future_child_form {
@@ -88,7 +88,7 @@ a{
     font-size: 40PX;
     z-index: -1;
     height: 600px;
-    width: 700px
+    width: 700px;
 }
 
 table {
@@ -96,7 +96,7 @@ table {
 }
 
 tr{
-    height: 200px
+    height: 200px;
 }
 
 
@@ -115,24 +115,24 @@ tr{
     font-size:35px;
     height: 10px;
     padding-left: 20px;
-    padding-top: 10px
+    padding-top: 10px;
 }
 
 .Registr_text_Login{
     font-size:35px;
     height: 10px;
     padding-left: 20px;
-    padding-top: 10px
+    padding-top: 10px;
 }
 
 .Registr_form{
     height: 70px;
     width: 670px;
-    margin-left: 13px
+    margin-left: 13px;
 }
 
 .Remember_me{
-    margin-left: 20px
+    margin-left: 20px;
 }
 
 .form-control1111 {
@@ -153,7 +153,7 @@ tr{
     border-radius: var(--bs-border-radius);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     background: #e7e7e7;
-    border-radius: 40px
+    border-radius: 40px;
 }
 
 .block {
@@ -168,14 +168,14 @@ tr{
     z-index: 0;
     border-radius: 40px;
     height: 620px;
-    background: #d1d1d1
+    background: #d1d1d1;
 }
 
 .btn_border2{
     z-index: 0;
     border-radius: 20px;
     height: 620px;
-    background: #d1d1d1
+    background: #d1d1d1;
 }
 
 .btn_border1{
@@ -252,5 +252,9 @@ tr{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px
+    width: 100px;
+}
+
+.div1{
+    disabled: inline;
 }
