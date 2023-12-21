@@ -45,6 +45,10 @@ def reg():
         user.set_password(form.password.data)
         db_sess.add(user)
         db_sess.commit()
+        if user and user.check_password(form.password.data):
+            login_user(user)
+            session['id'] = user.id
+            session['login'] = user.login
         return redirect('/Profile')
     return render_template('Reg.html', title='Регистрация', form=form)
 
@@ -59,7 +63,7 @@ def log():
             login_user(user, remember=form.remember_me.data)
             session['id'] = user.id
             session['login'] = user.login
-            return redirect('/menu')
+            return redirect('/Profile')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
                                form=form)
