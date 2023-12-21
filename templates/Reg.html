@@ -12,7 +12,8 @@
     <div class = 'block'>
         <div class="Centre_Registr_child_form">
             <h1 class="Registr">Регистрация</h1>
-    <form action="" method="post" enctype="multipart/form-data" class="login_form">
+    <div class="btn_border1">
+        <form action="" method="post" enctype="multipart/form-data" class="login_form">
         {{ form.hidden_tag() }}
         <p>
             <div class="Registr_text">{{ form.login.label }}</div><br>
@@ -42,14 +43,15 @@
         {% endfor %}
         </p>
         <div class="row">
-        <p class ='col-sm'>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        <p class ='col-sm1'>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
 <!--            #btn btn-outline-success-->
-            <div class="col-sm">
-                <a class="btn btn-primary " href="/login">Войти</a>
+            <div class="col-sm2">
+                <a class="btn1 btn-primary " href="/login">Войти</a>
             </div>
         </div>
             {{message}}
     </form>
+    </div>
             </div>
     </div>
 </div>
