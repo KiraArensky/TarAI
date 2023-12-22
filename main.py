@@ -28,9 +28,9 @@ def load_user(user_id):
     return db_sess.query(User).get(user_id)
 
 
-@app.errorhandler(404)
+@app.errorhandler(401)
 def not_found(error):
-    return make_response(jsonify({'error': 'Not found'}), 404)
+    return redirect("/login")
 
 
 @app.route('/')
@@ -134,14 +134,11 @@ def Money():
 @login_required
 def user():
     form = Pic()
-    if form.new_avatar:
+    if form.validate_on_submit():
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.login == session['login']).first()
-        new_avatar = form.new_avatar.data
-        new_avatar_filename = new_avatar
-        print(new_avatar_filename)
         try:
-            f = request.files['picture']
+            f = form.new_avatar.data
             split_tup = os.path.splitext(f.filename)
             file_extension = split_tup[1]
             filename = f'{str(user.id)}{file_extension}'

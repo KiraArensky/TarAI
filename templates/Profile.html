@@ -3,23 +3,31 @@
 <div>
     <div class="row">
         <div class="col-sm">
-            <img class="rounded-circle" src="{{ picture }}">
+            <img src="{{ picture }}">
         </div>
         <div class="col-sm">
             <p>{{ login }}</p>
             <p>Имя: {{ name }}</p>
         </div>
-        <a href="/logout">Выйти</a>
         <div class="form-group">
-            <label for="picture">Аватарка</label>
-            <input type="file" class="form-control-file" id="picture" name="picture" accept="image/*">
+            <form method="post" action="{{ url_for('user') }}" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                {{ form.new_avatar.label }}
+                <br>
+                {{ form.new_avatar }}
+                {% for error in form.new_avatar.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+                {% endfor %}
+                <br>
+                <button type="submit">Change</button>
+            </form>
         </div>
-
+        <br><a style="color: darkred" href="/logout">Выйти</a><br>
     </div>
 </div>
 <hr>
 <a href="#">Донат</a>
-</div>
-</div>
 <hr>
 {% endblock %}
