@@ -167,7 +167,7 @@ def user():
 def logout():
     logout_user()
     return redirect("/")
-
+#
 # @app.route('/donate')
 # @login_required
 # def donate():
