@@ -113,15 +113,16 @@ tr{
 }
 
 .Table_Card_Content{
-    padding-top: 50%;
-    padding-bottom: 50%;
+    padding-top: 20%;
+    padding-bottom: 20%;
     justify-content: center;
     align-items: center;
     display: flex;
+    font-size: 40px;
 }
 
 .Table_Strochka{
-    height = 60px;
+    height = 560px;
 }
 
 .Registr{

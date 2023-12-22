@@ -6,6 +6,7 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from data.picform import Pic
 from data.random import RandomCard
 from data.random import RandomCard
+
 from data import db_session
 from data.donate import buy_pay, im_donate
 from data.users import User
@@ -107,9 +108,10 @@ def ai():
 @app.route('/Relation')
 @login_required
 def Relation():
-    a = RandomCard()[0]
-    b = RandomCard()[1]
-    c = RandomCard()[2]
+    Freddy = RandomCard()
+    a = f'ai_test/tarot_for_Andrey/{Freddy[0]}'
+    b = Freddy[1]
+    c = Freddy[2]
     return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c)
 
 
