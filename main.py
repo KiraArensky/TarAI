@@ -5,6 +5,7 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 
 from data.picform import Pic
 from data.random import RandomCard
+from data.random import RandomCard
 from data import db_session
 from data.donate import buy_pay, im_donate
 from data.users import User

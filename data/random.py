@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import random
 import os
 
@@ -14,3 +15,9 @@ def RandomCard():
     b = List[1]
     c = List[2]
     return [a, b, c]
+=======
+def RandomCard():
+    a = random.randint(1, 10)
+    b = random.randint(1, 10)
+    c = random.randint(1, 10)
+>>>>>>> origin/teslya
