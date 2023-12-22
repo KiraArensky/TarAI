@@ -4,12 +4,15 @@ import os
 
 def RandomCard():
     List = []
-    while len(List)<=6:
+    while len(List)<=3:
         i = random.choice(os.listdir("static/tarot_for_Andrey"))
         if i in List:
             i = random.choice(os.listdir("static/tarot_for_Andrey"))
         else:
             List.append(i)
 
-    return List
+    a = List[0]
+    b = List[1]
+    c = List[2]
+    return [a, b, c]
 
