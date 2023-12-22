@@ -8,4 +8,6 @@ class RegisterForm(FlaskForm, SerializerMixin):
     login = StringField("Логин", validators=[DataRequired()])
     password = PasswordField('Пароль', validators=[DataRequired()])
     password_again = PasswordField('Повторите пароль', validators=[DataRequired()])
+    name = StringField("Имя", validators=[DataRequired()])
+
     submit = SubmitField('Зарегистрироваться')

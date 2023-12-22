@@ -1,21 +1,27 @@
 {% extends "Base.html" %}
 {% block content %}
-
 <div>
     <div class="row">
         <div class="col-sm">
-            <p>{{ login }}</p>
+            <td><img class="rounded-circle" src="{{ picture }}"></td>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <a href="#">Донат</a>
+        <div class="col-sm">
+            <p>{{ login }}</p>
+            <p>Имя: {{ name }}</p>
+        </div>
+        <div class="form-group">
+            <label for="picture">Аватарка</label>
+            <input type="file" class="form-control-file" id="picture" name="picture" accept="image/*">
+            <div class="row">
+                <p class='col-sm1'>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+            </div>
+        </div>
+
     </div>
+</div>
+<hr>
+<a href="#">Донат</a>
+</div>
 </div>
 <hr>
 {% endblock %}

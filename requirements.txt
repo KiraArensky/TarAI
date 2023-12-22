@@ -10,3 +10,4 @@ SQLAlchemy
 SQLAlchemy-serializer
 WTForms  
 yoomoney
+pillow
