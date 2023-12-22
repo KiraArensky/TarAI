@@ -99,8 +99,10 @@ def ai():
 @app.route('/Relation')
 @login_required
 def Relation():
-
-    return render_template("Relation.html")
+    a = RandomCard()[0]
+    b = RandomCard()[1]
+    c = RandomCard()[2]
+    return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c)
 
 @app.route('/Career')
 @login_required

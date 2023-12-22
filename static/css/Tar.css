@@ -89,6 +89,15 @@ a{
     z-index: -1;
     height: 600px;
     width: 700px;
+
+}
+
+.Center_Cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    width: 100%;
 }
 
 table {
@@ -99,8 +108,21 @@ tr{
     height: 200px;
 }
 
+.Table_Card{
+    width:90%;
+}
 
+.Table_Card_Content{
+    padding-top: 50%;
+    padding-bottom: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 
+.Table_Strochka{
+    height = 60px;
+}
 
 .Registr{
     text-align: center;
