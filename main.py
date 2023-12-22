@@ -130,12 +130,23 @@ def user():
         user = db_sess.query(User).filter(User.login == session['login']).first()
         try:
             f = request.files['picture']
+            print(1)
             split_tup = os.path.splitext(f.filename)
+            print(2)
             file_extension = split_tup[1]
+            print(4)
+
             filename = f'{str(user.id)}{file_extension}'
+            print(5)
+
             f.save(os.path.join('static/user_pic/', filename))
+            print(6)
+
             user.avatar(user, db_sess, filename)
+            print(7)
+
             session['picture'] = user.picture
+            print(session)
         except:
             user.avatar(user, db_sess, 'unnamed.jpg')
             session['picture'] = user.picture
