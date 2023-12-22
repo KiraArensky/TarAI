@@ -105,11 +105,11 @@ def ai():
     return render_template('Ai.html', form=form, ai_resp="None")
 
 
-@app.route('/Relation')
+@app.route('/Relation', methods=['GET', 'POST'])
 @login_required
 def Relation():
     Freddy = RandomCard()
-    a = f'ai_test/tarot_for_Andrey/{Freddy[0]}'
+    a = Freddy[0]
     b = Freddy[1]
     c = Freddy[2]
     return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c)
