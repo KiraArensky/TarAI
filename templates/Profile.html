@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "Base.html" %}
+{% block content %}
+
 <div>
     <div class="row">
         <div class="col-sm">
-            <p>frfgrgrgrgfr</p>
+            <p>{{ login }}</p>
         </div>
         <br>
         <br>
@@ -18,9 +14,8 @@
         <br>
         <br>
         <br>
-        <a href="/donate">Донат</a>
+        <a href="#">Донат</a>
     </div>
 </div>
 <hr>
-</body>
-</html
+{% endblock %}

@@ -1,15 +1,16 @@
-import os
-import sqlite3
 from flask import *
 from sqlite3 import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-
+from data.random import RandomCard
 from data import db_session
+from data.donate import buy_pay, im_donate
 from data.users import User
 from data.loginform import LoginForm
 from data.regform import RegisterForm
 from data.aiform import Ai
 from data.ai_ChatGPT import ai_request
+import random
+from webbrowser import *
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'taro_ai'
@@ -47,6 +48,10 @@ def reg():
         user.set_password(form.password.data)
         db_sess.add(user)
         db_sess.commit()
+        if user and user.check_password(form.password.data):
+            login_user(user)
+            session['id'] = user.id
+            session['login'] = user.login
         return redirect('/Profile')
     return render_template('Reg.html', title='Регистрация', form=form)
 
@@ -60,7 +65,8 @@ def log():
         if user and user.check_password(form.password.data):
             login_user(user, remember=form.remember_me.data)
             session['id'] = user.id
-            return redirect('/menu')
+            session['login'] = user.login
+            return redirect('/Profile')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
                                form=form)
@@ -93,6 +99,7 @@ def ai():
 @app.route('/Relation')
 @login_required
 def Relation():
+
     return render_template("Relation.html")
 
 @app.route('/Career')
@@ -108,12 +115,7 @@ def Money():
 @app.route('/Profile')
 @login_required
 def user():
-    # db_sess = db_session.create_session()
-    # user = db_sess.query(User).filter(User.login == ).first()
-    if user == None:
-        flash('User not found.')
-        return redirect('/login')
-    return render_template('Profile.html')
+    return render_template('Profile.html', login=session['login'])
 
 
 @app.route('/logout')
@@ -122,11 +124,12 @@ def logout():
     logout_user()
     return redirect("/")
 
-
-@app.route('/donate')
-@login_required
-def donate():
-    return redirect("/")
+#
+# @app.route('/donate')
+# @login_required
+# def donate():
+#     im_donate(session['login'])
+#     return redirect("Donate.html")
 
 
 if __name__ == '__main__':

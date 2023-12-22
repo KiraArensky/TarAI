@@ -9,12 +9,13 @@
 </head>
 <body>
 <div class = 'block'>
-    <div class="Centre_Registr_child_form">
-    <h1 class="Registr">Войдите в аккаунт</h1>
+    <div class="Registr"><h2 class="Registr">Войдите в аккаунт</h2></div>
+    <div class="Centre_Registr_child_form btn_border2">
+
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
-            <div class="Registr_text">{{ form.login.label }}</div><br>
+            <div class="Registr_text_Login">{{ form.login.label }}</div><br>
             <div class = 'Registr_form'>{{ form.login(class='form-control1111') }}</div><br>
             {% for error in form.login.errors %}
         <div class="alert alert-danger" role="alert">
@@ -31,13 +32,15 @@
         </div>
         {% endfor %}
         </p>
+        <div class="Remember_me">
         <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
         <div class="row">
             <div class="col-sm">
                 <p>{{ form.submit(type="submit", class="btn btn-primary ") }}</p>
             </div>
             <div class="col-sm">
-                <a class="btn btn-primary " href="/registr">Зарегистрироваться</a>
+                <a class="btn btn-primary Reg_btn" href="/registr">Зарегистрироваться</a>
+            </div>
             </div>
         </div>
         <div>{{ message }}</div>
