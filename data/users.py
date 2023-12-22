@@ -26,14 +26,27 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
     def check_password(self, password):
         return check_password_hash(self.hashed_password, password)
 
-    def avatar(self, us, db, filename):
-        im = Image.open(f'static/user_pic/{filename}')
-        img_width, img_height = im.size
-        img = im.crop(((img_width - 200) // 2,
-                       (img_height - 200) // 2,
-                       (img_width + 200) // 2,
-                       (img_height + 200) // 2))
+    def avatar(self, us, db, filename, size=200):
+        img = Image.open(f'static/user_pic/{filename}')
+
+        # Получаем размеры изображения
+        width, height = img.size
+
+        # Вычисляем размер квадрата для обрезки
+        min_dim = min(width, height)
+        left = (width - min_dim) // 2
+        top = (height - min_dim) // 2
+        right = (width + min_dim) // 2
+        bottom = (height + min_dim) // 2
+
+        # Обрезаем изображение по середине
+        img_cropped = img.crop((left, top, right, bottom))
+
+        # Уменьшаем размер изображения
+        img_resized = img_cropped.resize((size, size))
+
+        # Сохраняем результат
         us.picture = f'static/user_pic/{filename}'
         os.remove(f'static/user_pic/{filename}')
-        img.save(f'static/user_pic/{filename}', quality=95)
+        img_resized.save(f'static/user_pic/{filename}', quality=95)
         db.commit()

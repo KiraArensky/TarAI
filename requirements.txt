@@ -2,8 +2,8 @@ Flask
 Flask-Login         
 Flask-WTF  
 Jinja2 
-openai 
-pymorphy2      
+openai==0.28
+pymorphy2
 pymorphy2-dicts-ru  
 requests          
 SQLAlchemy  
