@@ -28,6 +28,11 @@ def load_user(user_id):
     return db_sess.query(User).get(user_id)
 
 
+@app.errorhandler(404)
+def not_found(error):
+    return make_response(jsonify({'error': 'Not found'}), 404)
+
+
 @app.route('/')
 def main():
     return redirect("/login")
@@ -125,32 +130,24 @@ def Money():
     return render_template("Money.html")
 
 
-@app.route('/Profile')
+@app.route('/Profile', methods=['GET', 'POST'])
 @login_required
 def user():
     form = Pic()
-    if form.validate_on_submit():
+    if form.new_avatar:
         db_sess = db_session.create_session()
         user = db_sess.query(User).filter(User.login == session['login']).first()
+        new_avatar = form.new_avatar.data
+        new_avatar_filename = new_avatar
+        print(new_avatar_filename)
         try:
             f = request.files['picture']
-            print(1)
             split_tup = os.path.splitext(f.filename)
-            print(2)
             file_extension = split_tup[1]
-            print(4)
-
             filename = f'{str(user.id)}{file_extension}'
-            print(5)
-
             f.save(os.path.join('static/user_pic/', filename))
-            print(6)
-
             user.avatar(user, db_sess, filename)
-            print(7)
-
             session['picture'] = user.picture
-            print(session)
         except:
             user.avatar(user, db_sess, 'unnamed.jpg')
             session['picture'] = user.picture
@@ -165,6 +162,7 @@ def user():
 def logout():
     logout_user()
     return redirect("/")
+
 
 # @app.route('/donate')
 # @login_required
