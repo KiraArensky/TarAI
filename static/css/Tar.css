@@ -119,10 +119,31 @@ tr{
     align-items: center;
     display: flex;
     font-size: 40px;
+    width: 230px;
 }
 
 .Table_Strochka{
     height = 260px;
+    justify-content: center;
+}
+
+.Table_Strochka_Names{
+    width: 100%;
+    height: 50px;
+}
+
+.Table_td{
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Taro_Name{
+    font-size: 40px;
+    width: 33%;
+    text-align: center;
+    font-size: 40px;
+
 }
 
 .Registr{
