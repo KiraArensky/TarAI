@@ -1,23 +1,27 @@
-{% extends "Base.html" %}
-{% block content %}
-
-<div class='block'>
-    <div class = 'Centre_Future_child'><h2>Тема расклада</h2>></div>
-    <div class = 'Centre_Future_child_form btn_border'>
-        <table>
-            <tr><th></th>
-                <th><div class="btn_theme"><a href="/Relation" class = 'a1'>Отношения</a></div></th>
-            <th></th></tr>
-            <tr><th></th>
-                <th><div class="btn_theme"><a href="/Career" class = 'a1'>Карьера</a></div></th>
-            <th></th></tr>
-            <tr><th></th>
-                <th><div class="btn_theme"><a href="/Health" class = 'a1'>Здоровье</a></div></th>
-            <th></th></tr>
-            <tr><th></th>
-                <th><div class="btn_theme"><a href="/Study" class = 'a1'>Учеба</a></div></th>
-            <th></th></tr>
-        </table>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TarAI</title>
+    <link rel="stylesheet" href="static/css/future.css">
+  </head>
+  <body>
+    <div class="header">
+      <a href="/Future" id="one">Предсказание</a>
+      <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
+      <a href="/tarot" id="three">Режим таролога</a>
+      <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
     </div>
-</div>
-{% endblock %}
+    <p>Выберите тему</p>
+    <p>расклада и предсказания</p>
+    <div class="list">
+      <a href="/Career"><div>Карьера</div></a>
+      <a href="/Health"><div>Здоровье</div></a>
+      <a href="/Relation"><div>Любовь</div></a>
+      <a href="/Study"><div>Дружба</div></a>
+    </div>
+    <p>или введите свою:</p>
+    <input type="text" name="" value="">
+    <div class="btns"> <a href="#" class="log"><span>Готово</span></a></div>
+  </body>
+</html>
