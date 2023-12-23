@@ -7,7 +7,7 @@ from data.picform import Pic
 from data.random import RandomCard, save_tarot_user, Slovar, Listik, Listik2
 
 from data import db_session
-from data.donate import buy_pay, im_donate
+# from data.donate import buy_pay, im_donate
 from data.users import User
 from data.loginform import LoginForm
 from data.regform import RegisterForm
