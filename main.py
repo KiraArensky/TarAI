@@ -2,6 +2,7 @@ import os
 from flask import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
+from data.ai_req_tarot import ai_old_req
 from data.picform import Pic
 from data.random import RandomCard, save_tarot_user, Slovar, Listik, Listik2
 
@@ -110,7 +111,7 @@ def ai():
                        form.autocomplete_input_card3.data,
                        form.autocomplete_input_card4.data,
                        form.autocomplete_input_card5.data]
-         ai_resp ='sffdfsdfdsfsdfsfsdfsdfsdfsdfsdfsdfsdfsd'
+         ai_resp = ai_old_req(list_tarot, theme_tarot)
          return render_template('Ai.html', form=form, ai_resp=ai_resp, option=Listik)
     return render_template('Ai.html', form=form, ai_resp="None", option=Listik, option2=Listik2)
 
