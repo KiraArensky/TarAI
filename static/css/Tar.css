@@ -302,3 +302,35 @@ tr{
 .div1{
     disabled: inline;
 }
+
+.Spisok{
+    height: 40px;
+    justify-items: center;
+    text-align: center;
+}
+
+.Tarolog_Cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.Tarolog_Cards2{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30px;
+    font-size: 20px
+}
+
+.btn{
+    height: 70px;
+    font-size: 20px
+}
+
+.DISPIK{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

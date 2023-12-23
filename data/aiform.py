@@ -5,5 +5,6 @@ from wtforms.validators import DataRequired
 
 
 class Ai(FlaskForm, SerializerMixin):
-    ai_req = StringField('Вопрос', validators=[DataRequired()])
-    submit = SubmitField('Отправить')
+    autocomplete_input_theme = StringField('Выберите Тему', validators=[DataRequired()])
+    autocomplete_input_card = StringField('Выберите карту', validators=[DataRequired()])
+    submit = SubmitField('Спросить у Вселенной')

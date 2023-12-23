@@ -3,7 +3,7 @@ from flask import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
 from data.picform import Pic
-from data.random import RandomCard, save_tarot_user, Slovar
+from data.random import RandomCard, save_tarot_user, Slovar, Listik, Listik2
 
 from data import db_session
 from data.donate import buy_pay, im_donate
@@ -104,10 +104,10 @@ def Future():
 def ai():
     form = Ai()
     if form.validate_on_submit():
-        ai_req = form.ai_req.data
-        ai_resp = ai_request(ai_req)
-        return render_template('Ai.html', form=form, ai_resp=ai_resp)
-    return render_template('Ai.html', form=form, ai_resp="None")
+        ai_req = form.autocomplete_input_theme.data
+        ai_resp = form.autocomplete_input_theme.data
+        return render_template('Ai.html', form=form, ai_resp=ai_resp, option=Listik)
+    return render_template('Ai.html', form=form, ai_resp="None", option=Listik, option2=Listik2)
 
 
 @app.route('/Relation')
