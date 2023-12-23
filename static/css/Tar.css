@@ -2,6 +2,19 @@ body{
     background: #ffffff;
 }
 
+.Block_Menu{
+    width: 88%;
+    margin-top: 6%;
+    margin-left: 6%;
+    margin-right: 6%;
+    background-color: cornsilk;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+}
+
 nav {
     z-index:3 ;
     padding: 10px 0;
