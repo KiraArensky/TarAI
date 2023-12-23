@@ -1,0 +1,157 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+  font-family: "Arsenica";
+  src: url("../for_css/ArsenicaTrial-Bold.ttf");
+}
+
+body {
+	background-color: #202020;
+	background-image: url("../for_css/images/bg_login.png");
+	background-size: cover;
+	color: white;
+	font-family: "Arsenica";
+	font-size: 32px;
+}
+
+.heading {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.heading:first-of-type {
+	font-size: 64px;
+}
+
+.logo a {
+	display: flex;
+	justify-content: center;
+}
+
+.login {
+	margin-left: 27%;
+	box-sizing: border-box;
+	font-size: 40px;
+}
+
+input[type="text"] {
+	border-radius: 28px;
+	width: 50%;
+	height: 77px;
+	opacity: 80%;
+	box-sizing: border-box;
+	margin-left: 25%;
+	margin-bottom: 50px;
+	padding-left: 20px;
+}
+
+input[type="text"]:focus {
+	font-family: "Arsenica";
+	font-size: 32px;
+}
+
+input[type="password"] {
+	border-radius: 28px;
+	width: 50%;
+	height: 77px;
+	opacity: 80%;
+	box-sizing: border-box;
+	margin-left: 25%;
+	margin-bottom: 50px;
+	padding-left: 20px;
+}
+
+input[type="password"]:focus {
+	font-family: "Arsenica";
+	font-size: 32px;
+}
+
+.rembme {
+	margin-left: 26%;
+	box-sizing: border-box;
+	font-size: 28px;
+	margin-bottom: 70px;
+}
+
+.rembme input {
+	width: 30px;
+	height: 30px;
+	opacity: 80%;
+	margin-right: 20px
+}
+
+.btns {
+	margin-left: 25%;
+	margin-right: 25%;
+	font-size: 40px;
+}
+
+.reg {
+	display: inline-block;
+	border-radius: 28px;
+	padding: 16px 4% 16px 4%;
+	background-color: rgba(41, 41, 41, 0.8);
+	float: left;
+	color: white;
+	text-decoration: none;
+}
+
+.log {
+	font-family: "Arsenica";
+	font-size: 32px;
+	float: right;
+	background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
+	color: white;
+	text-decoration: none;
+	border-radius: 28px;
+	padding: 14px 4% 15px 4%;
+}
+
+.log:hover {
+	transition: 0.3s;
+	display: inline;
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.reg span {
+	opacity: 100%;
+}
+
+.reg:hover {
+	transition: 0.3s;
+	display: inline;
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.reg:hover span {
+	transition: 0.3s;
+	opacity: 30%;
+}
+
+.bord {
+	position: fixed;
+}
+
+#one {
+	margin: 3% 0 0 6%
+}
+
+#two {
+	transform: rotate(90deg);
+	margin: 3% 0 0 84vw;
+}
+
+#three {
+	transform: rotate(180deg);
+	margin: 86vh 0 0 84vw;
+}
+
+#four {
+	transform: rotate(-90deg);
+	margin: 86vh 0 0 6%;
+}
