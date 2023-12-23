@@ -1,6 +1,7 @@
 import random
 import os
 import sqlite3
+from datetime import datetime, timedelta
 
 Slovar = {
     '2жезла.jpg': '2 жезла',
@@ -105,3 +106,39 @@ def RandomCard():
     return List
 
 
+def save_tarot_user(id_user, a, b, c, d, e, f, theme):
+    con = sqlite3.connect("db/TarAi_Data.db")
+    cur = con.cursor()
+
+    tarotlist = cur.execute(f"""SELECT * FROM Tarot_{theme} WHERE id = {id_user}""").fetchall()
+    print(tarotlist)
+    if tarotlist[0][1] == tarotlist[0][2] == tarotlist[0][3] is None:
+        cur.execute(f'''UPDATE Tarot_{theme} SET first_card_old = '{a}',
+         second_card_old = '{b}',
+         third_card_old = '{c}'
+         WHERE id = {id_user} ''')
+        con.commit()
+    else:
+        a = tarotlist[0][1]
+        b = tarotlist[0][2]
+        c = tarotlist[0][3]
+
+    if tarotlist[0][7] is not None:
+        past = datetime.strptime(tarotlist[0][7],'%Y-%m-%d %H:%M:%S.%f') + timedelta(days=1)
+    else:
+        past = datetime.now()
+    present = datetime.now()
+
+    if tarotlist[0][4] == tarotlist[0][5] == tarotlist[0][6] is None or past <= present or id_user == 1:
+        cur.execute(f'''UPDATE Tarot_{theme} SET first_card = '{d}', 
+        second_card = '{e}', 
+        third_card = '{f}',
+        datetime = '{present}'  
+        WHERE id = {id_user} ''')
+        con.commit()
+    else:
+        d = tarotlist[0][4]
+        e = tarotlist[0][5]
+        f = tarotlist[0][6]
+
+    return [a, b, c, d, e, f]

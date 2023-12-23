@@ -78,6 +78,8 @@ def log():
             login_user(user, remember=form.remember_me.data)
             session['id'] = user.id
             session['login'] = user.login
+            session['name'] = user.name
+            session['picture'] = user.picture
             return redirect('/Profile')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
@@ -121,7 +123,7 @@ def Relation():
     e = Freddy_Old[1]
     f = Freddy_Old[2]
 
-    save_tarot_user(session['id'], a, b, c, d, e, f, 'love')
+    a, b, c, d, e, f = map(str, save_tarot_user(session['id'], a, b, c, d, e, f, 'love'))
 
     return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c,
                            First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar)
@@ -140,6 +142,8 @@ def Career():
     e = Freddy_Old[1]
     f = Freddy_Old[2]
 
+    a, b, c, d, e, f = map(str, save_tarot_user(session['id'], a, b, c, d, e, f, 'career'))
+
     return render_template("Career.html", First_Card=a, Second_Card=b, Third_Card=c,
                            First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar)
 
@@ -157,6 +161,8 @@ def Health():
     e = Freddy_Old[1]
     f = Freddy_Old[2]
 
+    a, b, c, d, e, f = map(str, save_tarot_user(session['id'], a, b, c, d, e, f, 'health'))
+
     return render_template("Health.html", First_Card=a, Second_Card=b, Third_Card=c,
                            First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar)
 
@@ -173,6 +179,8 @@ def Study():
     d = Freddy_Old[0]
     e = Freddy_Old[1]
     f = Freddy_Old[2]
+
+    a, b, c, d, e, f = map(str, save_tarot_user(session['id'], a, b, c, d, e, f, 'study'))
 
     return render_template("Study.html", First_Card=a, Second_Card=b, Third_Card=c,
                            First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar)
@@ -206,6 +214,7 @@ def user():
 @login_required
 def logout():
     logout_user()
+    session.clear()
     return redirect("/")
 
 
