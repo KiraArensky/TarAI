@@ -104,8 +104,7 @@ def Future():
 def ai():
     form = Ai()
     if form.validate_on_submit():
-        ai_req = form.autocomplete_input_theme.data
-        ai_resp = form.autocomplete_input_theme.data
+        print(ai_resp := form.autocomplete_input_card.data)
         return render_template('Ai.html', form=form, ai_resp=ai_resp, option=Listik)
     return render_template('Ai.html', form=form, ai_resp="None", option=Listik, option2=Listik2)
 
