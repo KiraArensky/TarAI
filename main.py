@@ -35,7 +35,7 @@ def not_found(error):
 
 @app.route('/')
 def main():
-    return redirect("/login")
+    return render_template('Menu.html')
 
 
 @app.route('/registr', methods=['GET', 'POST'])
@@ -234,3 +234,5 @@ def logout():
 if __name__ == '__main__':
     db_session.global_init("db/TarAi_Data.db")
     app.run()
+
+
