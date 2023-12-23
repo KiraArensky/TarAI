@@ -12,7 +12,18 @@ body{
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+}
 
+.Block_Menu2{
+    width: 94%;
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: cornsilk;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }
 
 nav {
@@ -315,3 +326,41 @@ tr{
 .div1{
     disabled: inline;
 }
+
+.btn2 {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+    border-radius: var(--bs-btn-border-radius);
+    background-color: var(--bs-btn-bg);
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    font-size: 50px;
+    height: 80px;
+    background: yellow;
+    border-radius: 25px;
+}
+
+.Height{
+    height: 70px;
+}
+
+.Width{
+    width: 100%;
+}
+
+.Font-Size{
+    font-size: 35px;
+}
+
+
+
