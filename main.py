@@ -1,4 +1,6 @@
 import os
+
+import requests
 from flask import *
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 
@@ -7,7 +9,7 @@ from data.random import RandomCard, save_tarot_user, Slovar
 
 from data import db_session
 from data.donate import buy_pay, im_donate
-from data.request_ai import ai_old_req
+from data.request_ai import ai_req
 from data.users import User
 from data.loginform import LoginForm
 from data.regform import RegisterForm
@@ -117,27 +119,40 @@ def ai():
 @app.route('/Relation')
 @login_required
 def Relation():
-    Freddy_Old = RandomCard()
-    a = Freddy_Old[0]
-    b = Freddy_Old[1]
-    c = Freddy_Old[2]
+    prompt = request.form['prompt']
 
-    Freddy = RandomCard()
-    d = Freddy[0]
-    e = Freddy[1]
-    f = Freddy[2]
+    # Асинхронный запрос к OpenAI API
+    response = requests.post(
+        'https://api.openai.com/v1/engines/turbo/completions',
+        json={'prompt': prompt},
+        headers={'Authorization': f'Bearer {"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"}'}
+    )
 
-    d, e, f, a, b, c, = map(str, save_tarot_user(session['id'], d, e, f, a, b, c, 'love'))
+    result = response.json()
 
-    first_ai, second_ai, third_ai, general_ai = ai_old_req(Slovar[a], Slovar[b], Slovar[c], 'любовь')
-
-    first_ai_old, second_ai_old, third_ai_old, general_ai_old = ai_old_req(Slovar[d], Slovar[e], Slovar[f], 'любовь')
-
-    return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c,
-                           First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar,
-                           first_ai=first_ai, second_ai=second_ai, third_ai=third_ai, general_ai=general_ai,
-                           first_ai_old=first_ai_old, second_ai_old=second_ai_old, third_ai_old=third_ai_old,
-                           general_ai_old=general_ai_old)
+    # Возвращаем результат в формате JSON
+    return jsonify(result)
+    # Freddy_Old = RandomCard()
+    # a = Freddy_Old[0]
+    # b = Freddy_Old[1]
+    # c = Freddy_Old[2]
+    #
+    # Freddy = RandomCard()
+    # d = Freddy[0]
+    # e = Freddy[1]
+    # f = Freddy[2]
+    #
+    # d, e, f, a, b, c, = map(str, save_tarot_user(session['id'], d, e, f, a, b, c, 'love'))
+    #
+    # first_ai, second_ai, third_ai, general_ai = ai_req(Slovar[a], Slovar[b], Slovar[c], 'любовь')
+    #
+    # first_ai_old, second_ai_old, third_ai_old, general_ai_old = ai_req(Slovar[d], Slovar[e], Slovar[f], 'любовь')
+    #
+    # return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c,
+    #                        First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar,
+    #                        first_ai=first_ai, second_ai=second_ai, third_ai=third_ai, general_ai=general_ai,
+    #                        first_ai_old=first_ai_old, second_ai_old=second_ai_old, third_ai_old=third_ai_old,
+    #                        general_ai_old=general_ai_old)
 
 
 @app.route('/Career')

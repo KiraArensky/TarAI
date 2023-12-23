@@ -1,7 +1,7 @@
 from data.ai_ChatGPT import ai_request
 
 
-def ai_old_req(card_1, card_2, card_3, theme):
+def ai_req(card_1, card_2, card_3, theme):
     request_mess = f'Пожалуйста, проинтерпретируйте значения следующих трех карт Таро: {card_1}, {card_2}, {card_3}.' \
                    f' Раскройте их значения и взаимосвязи, особенно в контексте моей текущей ситуации или вопроса ' \
                    f'о {theme}. Напиши сообщение по такому шаблону: \n"' \
