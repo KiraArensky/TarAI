@@ -19,17 +19,17 @@
     </div>
 
     <div class="Tarolog_Cards2">
-        <p>{{form.autocomplete_input_card.label}}</p>
-        <p>{{form.autocomplete_input_card.label}}</p>
-        <p>{{form.autocomplete_input_card.label}}</p>
-        <p>{{form.autocomplete_input_card.label}}</p>
-        <p>{{form.autocomplete_input_card.label}}</p>
+        <p>{{form.autocomplete_input_card1.label}}</p>
+        <p>{{form.autocomplete_input_card2.label}}</p>
+        <p>{{form.autocomplete_input_card3.label}}</p>
+        <p>{{form.autocomplete_input_card4.label}}</p>
+        <p>{{form.autocomplete_input_card5.label}}</p>
     </div>
 
     <div class="Tarolog_Cards">
 
         <p>
-            {{form.autocomplete_input_card(list="Card1")}}
+            {{form.autocomplete_input_card1(list="Card1")}}
             <datalist id="Card1" class="Spisok">
                 {% for entry in option %}
                 <option value="{{ entry }}">
@@ -39,7 +39,7 @@
 
 
         <p>
-            {{form.autocomplete_input_card(list="Card2")}}
+            {{form.autocomplete_input_card2(list="Card2")}}
             <datalist id="Card2" class="Spisok">
                 {% for entry in option %}
                 <option value="{{ entry }}">
@@ -49,7 +49,7 @@
 
 
         <p>
-            {{form.autocomplete_input_card(list="Card3")}}
+            {{form.autocomplete_input_card3(list="Card3")}}
             <datalist id="Card3" class="Spisok">
                 {% for entry in option %}
                 <option value="{{ entry }}">
@@ -59,7 +59,7 @@
 
 
         <p>
-            {{form.autocomplete_input_card(list="Card4")}}
+            {{form.autocomplete_input_card4(list="Card4")}}
             <datalist id="Card4" class="Spisok">
                 {% for entry in option %}
                 <option value="{{ entry }}">
@@ -69,7 +69,7 @@
 
 
         <p>
-            {{form.autocomplete_input_card(list="Card5")}}
+            {{form.autocomplete_input_card5(list="Card5")}}
             <datalist id="Card5" class="Spisok">
                 {% for entry in option %}
                 <option value="{{ entry }}">

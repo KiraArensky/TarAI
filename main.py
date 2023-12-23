@@ -104,8 +104,14 @@ def Future():
 def ai():
     form = Ai()
     if form.validate_on_submit():
-        print(ai_resp := form.autocomplete_input_card.data)
-        return render_template('Ai.html', form=form, ai_resp=ai_resp, option=Listik)
+         theme_tarot = form.autocomplete_input_theme.data
+         list_tarot = [form.autocomplete_input_card1.data,
+                       form.autocomplete_input_card2.data,
+                       form.autocomplete_input_card3.data,
+                       form.autocomplete_input_card4.data,
+                       form.autocomplete_input_card5.data]
+         ai_resp ='sffdfsdfdsfsdfsfsdfsdfsdfsdfsdfsdfsdfsd'
+         return render_template('Ai.html', form=form, ai_resp=ai_resp, option=Listik)
     return render_template('Ai.html', form=form, ai_resp="None", option=Listik, option2=Listik2)
 
 
