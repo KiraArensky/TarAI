@@ -90,6 +90,9 @@ input[type="password"]:focus {
 }
 
 .reg {
+	font-family: "Arsenica";
+	font-size: 32px;
+	float: right;
 	display: inline-block;
 	border-radius: 28px;
 	padding: 16px 4% 16px 4%;
