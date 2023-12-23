@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Arsenica";
+  src: url("../for_css/ArsenicaTrial-Bold.ttf");
+}
+
+body {
+	background-color: #202020;
+	background-image: url("../for_css/images/bg_login.png");
+	background-size: cover;
+	color: white;
+	font-family: "Arsenica";
+	font-size: 24px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.porno_logo {
+  width: 340px;
+}
+
+#one, #two, #three {
+  margin-right: 3%;
+}
+
+.header #three {
+  width: 90px;
+  margin-right: 90px;
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+    justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.list div {
+  font-family: 36px;
+  margin-left: 20px;
+  background-color: white;
+  opacity: 70%;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  padding: 33px 15px 44px 16px;
+}
+
+input[type="text"] {
+	border-radius: 18px;
+	width: 50%;
+	height: 50px;
+	opacity: 80%;
+	box-sizing: border-box;
+	margin-left: 25%;
+	margin-bottom: 50px;
+	padding-left: 20px;
+}
+
+input[type="text"]:focus {
+	font-family: "Arsenica";
+	font-size: 32px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.btns a {
+  background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
+	border-radius: 28px;
+	padding: 14px 4% 15px 4%;
+}
