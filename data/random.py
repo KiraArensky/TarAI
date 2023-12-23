@@ -207,7 +207,6 @@ def save_tarot_user(id_user, a, b, c, d, e, f, theme):
     cur = con.cursor()
 
     tarotlist = cur.execute(f"""SELECT * FROM Tarot_{theme} WHERE id = {id_user}""").fetchall()
-    print(tarotlist)
     if tarotlist[0][1] == tarotlist[0][2] == tarotlist[0][3] is None:
         cur.execute(f'''UPDATE Tarot_{theme} SET first_card_old = '{a}',
          second_card_old = '{b}',
