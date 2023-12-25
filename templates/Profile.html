@@ -1,6 +1,10 @@
-
-
-<link rel="stylesheet" href="static/css/profile.css">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>TarAI</title>
+    <link rel="stylesheet" href="static/css/profile.css">
+</head>
 
 <div class="header">
     <a href="/Future" id="one">Предсказание</a>
@@ -22,11 +26,11 @@
             <form method="post" action="{{ url_for('user') }}" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
                 <label class="input-file">
-                    <input type="file" name="file">
-                    <span class="input-file-btn">Выберите файл</span>
+                    {{ form.new_avatar }}
+                    <span class="input-file-btn" onclick="submitForm()">Сменить аватарку</span>
                 </label>
                 <br>
-                <button type="submit">Сохранить</button>
+                <button id="submit" type="submit">Сохранить</button>
             </form>
         </div>
         <br><a class="exits" href="/logout">Выйти</a><br>
@@ -35,3 +39,12 @@
 <hr>
 <a href="#">Донат</a>
 <hr>
+</body>
+<script>
+    document.getElementById('submit').style.display = 'none';
+    function submitForm() {
+      // Показать иконку загрузки
+      document.getElementById('submit').style.display = 'block';
+      }
+ </script>
+</html>

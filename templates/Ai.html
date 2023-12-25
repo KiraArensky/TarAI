@@ -1,8 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-
-
-<link rel="stylesheet" href="static/css/taro_mode.css">
+<head>
+    <title>TarAI</title>
+    <link rel="stylesheet" href="static/css/taro_mode.css">
+</head>
+<body>
 
 <div class="header">
     <a href="/Future" id="one">Предсказание</a>
@@ -10,7 +13,7 @@
     <a href="/tarot" id="three">Режим таролога</a>
     <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
 </div>
-<form action="" method="post">
+<form action="#loading-iconnn" method="post" id="forms">
     {{ form.hidden_tag() }}
 
     <div class="Tarolog_Cards2">
@@ -84,18 +87,34 @@
     </div>
 
     <div class="col-sm DISPIK">
-        <p>{{ form.submit(type="submit", class="btn btn-outline-success") }}</p>
+        <p>{{ form.submit(type="submit", class="btn btn-outline-success", onclick="submitForm()") }}</p>
     </div>
 </form>
+<br>
+<br>
 {% if ai_resp == "None" %}
-<div>
-    <p>Вселенная ждет запроса</p>
+<div id="loading-icon" style="text-align: center">
+    <p>Вселенная складывает карты... (около 20 секунд) </p>
+    <br>
+    <br>
 </div>
 {% else %}
-<div>
+<div id="loading-iconnn" style="text-align: center">
     <p>{{ai_resp}}</p>
+    <br>
+    <br>
 </div>
 {% endif %}
 
-{% endblock %}
+<script>
+    document.getElementById('loading-icon').style.display = 'none';
+    function submitForm() {
+      // Показать иконку загрузки
+      document.getElementById('loading-icon').style.display = 'block';
 
+      document.getElementById('forms').style.display = 'none';
+      }
+
+</script>
+</body>
+</html>

@@ -36,11 +36,11 @@
 
     <div class="rembme">
         {{ form.remember_me() }}
-        <label for="remme">Запомнить меня</label>
+        <label for="rembme">Запомнить меня</label>
     </div>
     <div class="btns">
-        <a href="/registr" class="reg"><span>Зарегистрироваться</span></a>
         {{ form.submit(class="log", type="submit") }}
+        <a href="/registr" class="reg"><span>Зарегистрироваться</span></a>
     </div>
     <div>{{ message }}</div>
 </form>
