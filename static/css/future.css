@@ -36,12 +36,12 @@ padding-top: 100px;
 }
 
 #one, #two, #three {
-  margin-right: 3%;
+  margin-right: 3vw;
 }
 
 .header #three {
   width: 90px;
-  margin-right: 6%;
+  margin-right: 6vw;
 }
 
 p {
@@ -70,11 +70,11 @@ p {
 
 input[type="text"] {
 	border-radius: 18px;
-	width: 70%;
+	width: 70vw;
 	height: 120px;
 	opacity: 80%;
 	box-sizing: border-box;
-	margin-left: 15%;
+	margin-left: 15vw;
 	margin-bottom: 10vh;
 	padding-left: 20px;
 }

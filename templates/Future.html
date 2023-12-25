@@ -16,27 +16,42 @@
     <a href="/tarot" id="three">Режим таролога</a>
     <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
 </div>
-<p>Выберите тему</p>
-<p>расклада и предсказания</p>
-<div class="list">
-    <a href="/Career">
-        <div>Карьера</div>
-    </a>
-    <a href="/Health">
-        <div>Здоровье</div>
-    </a>
-    <a href="/Relation">
-        <div>Любовь</div>
-    </a>
-    <a href="/Study">
-        <div>Дружба</div>
-    </a>
+<div id="content-block">
+    <p>Выберите тему</p>
+    <p>расклада и предсказания</p>
+    <div class="list">
+        <a href="/Career" onclick="submitForm()">
+            <div>Карьера</div>
+        </a>
+        <a href="/Health" onclick="submitForm()">
+            <div>Здоровье</div>
+        </a>
+        <a href="/Relation" onclick="submitForm()">
+            <div>Любовь</div>
+        </a>
+        <a href="/Study" onclick="submitForm()">
+            <div>Дружба</div>
+        </a>
+    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>или введите свою:</p>
+        {{ form.input_theme }}
+        <div class="btns">{{ form.submit(type="submit", onclick="submitForm()") }}</div>
+    </form>
 </div>
-<form action="" method="post" enctype="multipart/form-data">
-    {{ form.hidden_tag() }}
-    <p>или введите свою:</p>
-    {{ form.input_theme }}
-    <div class="btns">{{ form.submit(type="submit") }}</div>
-</form>
+<div id="loading-icon">
+    <p>Вселенная складывает карты... (около 20 секунд) </p>
+</div>
+<script>
+    document.getElementById('loading-icon').style.display = 'none';
+    function submitForm() {
+      // Скрыть блок контента
+      document.getElementById('content-block').style.display = 'none';
+
+      // Показать иконку загрузки
+      document.getElementById('loading-icon').style.display = 'block';
+      }
+ </script>
 </body>
 </html>
