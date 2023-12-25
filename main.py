@@ -236,27 +236,28 @@ def Health():
 @app.route('/Study')
 @login_required
 def Study():
-    Freddy_Old = RandomCard()
-    a = Freddy_Old[0]
-    b = Freddy_Old[1]
-    c = Freddy_Old[2]
-
-    Freddy = RandomCard()
-    d = Freddy[0]
-    e = Freddy[1]
-    f = Freddy[2]
-
-    d, e, f, a, b, c, = map(str, save_tarot_user(session['id'], d, e, f, a, b, c, 'study'))
-
-    first_ai, second_ai, third_ai, general_ai = ai_req(Slovar[a], Slovar[b], Slovar[c], 'учеба')
-
-    first_ai_old, second_ai_old, third_ai_old, general_ai_old = ai_req(Slovar[d], Slovar[e], Slovar[f], 'учеба')
-
-    return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c,
-                           First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar,
-                           first_ai=first_ai, second_ai=second_ai, third_ai=third_ai, general_ai=general_ai,
-                           first_ai_old=first_ai_old, second_ai_old=second_ai_old, third_ai_old=third_ai_old,
-                           general_ai_old=general_ai_old)
+    # Freddy_Old = RandomCard()
+    # a = Freddy_Old[0]
+    # b = Freddy_Old[1]
+    # c = Freddy_Old[2]
+    #
+    # Freddy = RandomCard()
+    # d = Freddy[0]
+    # e = Freddy[1]
+    # f = Freddy[2]
+    #
+    # d, e, f, a, b, c, = map(str, save_tarot_user(session['id'], d, e, f, a, b, c, 'study'))
+    #
+    # first_ai, second_ai, third_ai, general_ai = ai_req(Slovar[a], Slovar[b], Slovar[c], 'учеба')
+    #
+    # first_ai_old, second_ai_old, third_ai_old, general_ai_old = ai_req(Slovar[d], Slovar[e], Slovar[f], 'учеба')
+    #
+    # return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c,
+    #                        First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar,
+    #                        first_ai=first_ai, second_ai=second_ai, third_ai=third_ai, general_ai=general_ai,
+    #                        first_ai_old=first_ai_old, second_ai_old=second_ai_old, third_ai_old=third_ai_old,
+    #                        general_ai_old=general_ai_old)
+    return render_template("test.html")
 
 
 @app.route('/Profile', methods=['GET', 'POST'])
