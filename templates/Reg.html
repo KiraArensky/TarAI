@@ -47,6 +47,11 @@
         {{ error }}
     </p>
     {% endfor %}
+    <div class="rembme">
+        {{ form.check() }}
+        <label for="rembme"> Я
+            ознакомлен(-а) с <a href="../static/rules.txt" target="_blank">Политикой конфиденциальности</a></label>
+    </div>
     <div class="btns">
         <a href="/login" class="log"><span>Войти</span></a>
         {{ form.submit(type="submit", class="reg") }}
