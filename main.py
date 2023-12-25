@@ -103,7 +103,7 @@ def Future():
     return render_template('Future.html')
 
 
-@app.route('/ai', methods=['GET', 'POST'])
+@app.route('/tarot', methods=['GET', 'POST'])
 @login_required
 def ai():
     form = Ai()
@@ -277,5 +277,5 @@ def logout():
 
 if __name__ == '__main__':
     db_session.global_init("db/TarAi_Data.db")
-    app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True, host='asyatg.com')
 
