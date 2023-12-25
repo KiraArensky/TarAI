@@ -85,7 +85,7 @@ def log():
             session['login'] = user.login
             session['name'] = user.name
             session['picture'] = user.picture
-            return redirect('/Future')
+            return redirect('/Profile')
         return render_template('log.html',
                                message="Неправильный логин или пароль",
                                form=form)
