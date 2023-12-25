@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Arsenica";
+  src: url("../for_css/ArsenicaTrial-Bold.ttf");
+}
+
+body {
+	background-color: #202020;
+	background-image: url("../for_css/images/bg_login.png");
+	background-size: cover;
+	color: white;
+	font-family: "Arsenica";
+	font-size: 32px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10vh;
+}
+
+
+.porno_logo {
+  width: 340px;
+}
+
+#one, #two, #three {
+  margin-right: 3%;
+}
+
+.header #three {
+  width: 90px;
+  margin-right: 6%;
+}
+
+.Center_Cards {
+    width: 50%;
+    margin-left:25%;
+}

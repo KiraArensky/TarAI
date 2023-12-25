@@ -248,9 +248,9 @@ def Study():
 
     d, e, f, a, b, c, = map(str, save_tarot_user(session['id'], d, e, f, a, b, c, 'study'))
 
-    first_ai, second_ai, third_ai, general_ai = ai_req(Slovar[a], Slovar[b], Slovar[c], 'учеба')
+    first_ai, second_ai, third_ai, general_ai = ai_req(Slovar[a], Slovar[b], Slovar[c], 'дружба')
 
-    first_ai_old, second_ai_old, third_ai_old, general_ai_old = ai_req(Slovar[d], Slovar[e], Slovar[f], 'учеба')
+    first_ai_old, second_ai_old, third_ai_old, general_ai_old = ai_req(Slovar[d], Slovar[e], Slovar[f], 'дружба')
 
     return render_template("Relation.html", First_Card=a, Second_Card=b, Third_Card=c,
                            First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar,
