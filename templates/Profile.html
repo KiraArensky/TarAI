@@ -1,4 +1,4 @@
-{% block content %}
+
 
 <link rel="stylesheet" href="static/css/profile.css">
 
@@ -13,29 +13,25 @@
         <div class="col-sm">
             <img src="{{ picture }}">
         </div>
-        <div class="col-sm">
+        <div class="col-sm2">
             <p>{{ login }}</p>
             <p>Имя: {{ name }}</p>
         </div>
+        <br><br><br><br>
         <div class="form-group">
             <form method="post" action="{{ url_for('user') }}" enctype="multipart/form-data">
                 {{ form.hidden_tag() }}
-                {{ form.new_avatar.label }}
+                <label class="input-file">
+                    <input type="file" name="file">
+                    <span class="input-file-btn">Выберите файл</span>
+                </label>
                 <br>
-                {{ form.new_avatar }}
-                {% for error in form.new_avatar.errors %}
-                <div class="alert alert-danger" role="alert">
-                    {{ error }}
-                </div>
-                {% endfor %}
-                <br>
-                <button type="submit">Change</button>
+                <button type="submit">Сохранить</button>
             </form>
         </div>
-        <br><a style="color: darkred" href="/logout">Выйти</a><br>
+        <br><a class="exits" href="/logout">Выйти</a><br>
     </div>
 </div>
 <hr>
 <a href="#">Донат</a>
 <hr>
-{% endblock %}

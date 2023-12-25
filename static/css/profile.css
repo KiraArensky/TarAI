@@ -14,7 +14,7 @@ body {
 	background-size: cover;
 	color: white;
 	font-family: "Arsenica";
-	font-size: 32px;
+	font-size: 42px;
 }
 
 a {
@@ -23,7 +23,7 @@ a {
 }
 
 .header {
-padding-top: 100px;
+  padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,6 +40,73 @@ padding-top: 100px;
 
 .header #three {
   width: 90px;
-  margin-right: 6%;
+  margin-right: 8%;
 }
 
+.row {
+    margin-left: 35%;
+    width: 50%;
+}
+
+.col-sm img {
+    width: 50%;
+    margin-bottom: 50px;
+    border-radius: 55px;
+}
+
+.input-file {
+	position: relative;
+	display: inline-block;
+}
+.input-file-btn {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+	font-size:42px;
+	vertical-align: middle;
+	color: rgb(255 255 255);
+	text-align: center;
+	border-radius: 4px;
+	background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
+	line-height: 22px;
+	height: 40px;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+	transition: background-color 0.2s;
+}
+.input-file-text {
+	padding: 0 10px;
+	line-height: 42px;
+	display: inline-block;
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
+button {
+	background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
+	border: 0px;
+	border-radius: 4px;
+    color: white;
+    font-family: "Arsenica";
+	padding: 10px 20px;
+	margin: 10px 0;
+}
+
+.exits {
+    color: black;
+    background-color: grey;
+    padding: 10px 20px;
+    display:inline-block;
+    border-radius:12px;
+    margin-bottom: 50px;
+}
