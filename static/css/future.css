@@ -14,7 +14,7 @@ body {
 	background-size: cover;
 	color: white;
 	font-family: "Arsenica";
-	font-size: 24px;
+	font-size: 32px;
 }
 
 a {
@@ -23,9 +23,11 @@ a {
 }
 
 .header {
+padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10vh;
 }
 
 
@@ -39,20 +41,20 @@ a {
 
 .header #three {
   width: 90px;
-  margin-right: 90px;
+  margin-right: 6%;
 }
 
 p {
-  font-size: 30px;
+  font-size: 48px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 4vh;
 }
 
 .list {
   display: flex;
     justify-content: center;
   margin-top: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 10vh;
 }
 
 .list div {
@@ -63,23 +65,18 @@ p {
   border-radius: 10px;
   color: black;
   text-align: center;
-  padding: 33px 15px 44px 16px;
+  padding: 33px 18px 44px 18px;
 }
 
 input[type="text"] {
 	border-radius: 18px;
-	width: 50%;
-	height: 50px;
+	width: 70%;
+	height: 120px;
 	opacity: 80%;
 	box-sizing: border-box;
-	margin-left: 25%;
-	margin-bottom: 50px;
+	margin-left: 15%;
+	margin-bottom: 10vh;
 	padding-left: 20px;
-}
-
-input[type="text"]:focus {
-	font-family: "Arsenica";
-	font-size: 32px;
 }
 
 .btns {
@@ -90,5 +87,30 @@ input[type="text"]:focus {
 .btns a {
   background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
 	border-radius: 28px;
-	padding: 14px 4% 15px 4%;
+	padding: 14px 8% 15px 8%;
+}
+
+.bord {
+	position: fixed;
+	z-index:-1;
+}
+
+
+#one1 {
+	margin: 3% 0 0 6%
+}
+
+#two2 {
+	transform: rotate(90deg);
+	margin: 3% 0 0 84vw;
+}
+
+#three3 {
+	transform: rotate(180deg);
+	margin: 86vh 0 0 84vw;
+}
+
+#four {
+	transform: rotate(-90deg);
+	margin: 86vh 0 0 6%;
 }

@@ -19,7 +19,7 @@ body {
 
 .heading {
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 90px;
 }
 
 .heading:first-of-type {
@@ -29,6 +29,7 @@ body {
 .logo a {
 	display: flex;
 	justify-content: center;
+	margin-bottom: 160px;
 }
 
 .login {
@@ -44,7 +45,7 @@ input[type="text"] {
 	opacity: 80%;
 	box-sizing: border-box;
 	margin-left: 25%;
-	margin-bottom: 50px;
+	margin-bottom: 120px;
 	padding-left: 20px;
 }
 
@@ -60,20 +61,15 @@ input[type="password"] {
 	opacity: 80%;
 	box-sizing: border-box;
 	margin-left: 25%;
-	margin-bottom: 50px;
+	margin-bottom: 120px;
 	padding-left: 20px;
-}
-
-input[type="password"]:focus {
-	font-family: "Arsenica";
-	font-size: 32px;
 }
 
 .rembme {
 	margin-left: 26%;
 	box-sizing: border-box;
 	font-size: 28px;
-	margin-bottom: 70px;
+	margin-bottom: 250px;
 }
 
 .rembme input {
@@ -91,26 +87,27 @@ input[type="password"]:focus {
 
 .reg {
 	font-family: "Arsenica";
-	font-size: 32px;
+	font-size: 30px;
 	float: right;
 	display: inline-block;
 	border-radius: 28px;
-	padding: 16px 4% 16px 4%;
+	padding: 16px 2% 16px 2%;
 	background-color: rgba(41, 41, 41, 0.8);
 	float: left;
 	color: white;
 	text-decoration: none;
+		margin-bottom: 220px;
 }
 
 .log {
 	font-family: "Arsenica";
-	font-size: 32px;
+	font-size: 30px;
 	float: right;
 	background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
 	color: white;
 	text-decoration: none;
 	border-radius: 28px;
-	padding: 14px 4% 15px 4%;
+	padding: 14px 2% 15px 2%;
 }
 
 .log:hover {
