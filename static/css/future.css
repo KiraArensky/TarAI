@@ -82,12 +82,15 @@ input[type="text"] {
 .btns {
   display: flex;
   justify-content: center;
+  padding-bottom: 100px;
 }
 
-.btns a {
+.btns input {
   background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
 	border-radius: 28px;
 	padding: 14px 8% 15px 8%;
+	font-family: "Arsenica";
+	font-size: 32px;
 }
 
 .bord {

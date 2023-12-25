@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>TarAI</title>
     <link rel="stylesheet" href="static/css/future.css">
-  </head>
-  <body>
-  <img src="static/for_css/images/bord.svg" alt="" id="one1" class="bord">
-  <img src="static/for_css/images/bord.svg" alt="" id="two2" class="bord">
-  <img src="static/for_css/images/bord.svg" alt="" id="three3" class="bord">
-  <img src="static/for_css/images/bord.svg" alt="" id="four" class="bord">
-    <div class="header">
-      <a href="/Future" id="one">Предсказание</a>
-      <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
-      <a href="/tarot" id="three">Режим таролога</a>
-      <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
-    </div>
-    <p>Выберите тему</p>
-    <p>расклада и предсказания</p>
-    <div class="list">
-      <a href="/Career"><div>Карьера</div></a>
-      <a href="/Health"><div>Здоровье</div></a>
-      <a href="/Relation"><div>Любовь</div></a>
-      <a href="/Study"><div>Дружба</div></a>
-    </div>
+</head>
+<body>
+<img src="static/for_css/images/bord.svg" alt="" id="one1" class="bord">
+<img src="static/for_css/images/bord.svg" alt="" id="two2" class="bord">
+<img src="static/for_css/images/bord.svg" alt="" id="three3" class="bord">
+<img src="static/for_css/images/bord.svg" alt="" id="four" class="bord">
+<div class="header">
+    <a href="/Future" id="one">Предсказание</a>
+    <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
+    <a href="/tarot" id="three">Режим таролога</a>
+    <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
+</div>
+<p>Выберите тему</p>
+<p>расклада и предсказания</p>
+<div class="list">
+    <a href="/Career">
+        <div>Карьера</div>
+    </a>
+    <a href="/Health">
+        <div>Здоровье</div>
+    </a>
+    <a href="/Relation">
+        <div>Любовь</div>
+    </a>
+    <a href="/Study">
+        <div>Дружба</div>
+    </a>
+</div>
+<form action="" method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
     <p>или введите свою:</p>
-    <input type="text" name="" value="">
-    <div class="btns"> <a href="#" class="log"><span>Готово</span></a></div>
-  </body>
+    {{ form.input_theme }}
+    <div class="btns">{{ form.submit(type="submit") }}</div>
+</form>
+</body>
 </html>

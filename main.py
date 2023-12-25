@@ -10,6 +10,7 @@ from data.random import RandomCard, save_tarot_user, Slovar, Listik, Listik2
 
 from data import db_session
 from data.request_ai import ai_req
+from data.themeform import ThemeF
 # from data.donate import buy_pay, im_donate
 from data.users import User
 from data.loginform import LoginForm
@@ -100,7 +101,29 @@ def menu():
 @app.route('/Future', methods=['POST', 'GET'])
 @login_required
 def Future():
-    return render_template('Future.html')
+    form = ThemeF()
+    if form.validate_on_submit():
+        theme = form.input_theme.data
+        Freddy_Old = RandomCard()
+        a = Freddy_Old[0]
+        b = Freddy_Old[1]
+        c = Freddy_Old[2]
+
+        Freddy = RandomCard()
+        d = Freddy[0]
+        e = Freddy[1]
+        f = Freddy[2]
+
+        first_ai, second_ai, third_ai, general_ai = ai_req(Slovar[a], Slovar[b], Slovar[c], theme)
+
+        first_ai_old, second_ai_old, third_ai_old, general_ai_old = ai_req(Slovar[d], Slovar[e], Slovar[f], theme)
+
+        return render_template("Theme_tarot.html", First_Card=a, Second_Card=b, Third_Card=c,
+                               First_Card_Old=d, Second_Card_Old=e, Third_Card_Old=f, Slovar=Slovar,
+                               first_ai=first_ai, second_ai=second_ai, third_ai=third_ai, general_ai=general_ai,
+                               first_ai_old=first_ai_old, second_ai_old=second_ai_old, third_ai_old=third_ai_old,
+                               general_ai_old=general_ai_old)
+    return render_template('Future.html', form=form)
 
 
 @app.route('/tarot', methods=['GET', 'POST'])
@@ -108,14 +131,14 @@ def Future():
 def ai():
     form = Ai()
     if form.validate_on_submit():
-         theme_tarot = form.autocomplete_input_theme.data
-         list_tarot = [form.autocomplete_input_card1.data,
-                       form.autocomplete_input_card2.data,
-                       form.autocomplete_input_card3.data,
-                       form.autocomplete_input_card4.data,
-                       form.autocomplete_input_card5.data]
-         ai_resp = ai_old_req(list_tarot, theme_tarot)
-         return render_template('Ai.html', form=form, ai_resp=ai_resp, option=Listik)
+        theme_tarot = form.autocomplete_input_theme.data
+        list_tarot = [form.autocomplete_input_card1.data,
+                      form.autocomplete_input_card2.data,
+                      form.autocomplete_input_card3.data,
+                      form.autocomplete_input_card4.data,
+                      form.autocomplete_input_card5.data]
+        ai_resp = ai_old_req(list_tarot, theme_tarot)
+        return render_template('Ai.html', form=form, ai_resp=ai_resp, option=Listik)
     return render_template('Ai.html', form=form, ai_resp="None", option=Listik, option2=Listik2)
 
 
@@ -278,4 +301,3 @@ def logout():
 if __name__ == '__main__':
     db_session.global_init("db/TarAi_Data.db")
     app.run(debug=True, host='0.0.0.0')
-
