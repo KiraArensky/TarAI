@@ -1,18 +1,44 @@
 {% extends "Base.html" %}
 {% block content %}
 
-<div class = 'Center_Cards'>
+
+<div class='Center_Cards'>
     <table class="Table_Card">
         <tr class="Table_Strochka">
-            <td align="center"><div class='Table_Card_Content'><img src="../static/tarot_for_Andrey/{{First_Card}}" width="200px"></div></td>
-            <td align="center"><div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Second_Card}}" width="200px"></div></td>
-            <td align="center"><div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Third_Card}}" width="200px"></div></td>
+            <td align="center">
+                <div class='Table_Card_Content'><img src="../static/tarot_for_Andrey/{{First_Card}}" width="200px">
+                </div>
+            </td>
+            <td align="center">
+                <div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Second_Card}}" width="200px">
+                </div>
+            </td>
+            <td align="center">
+                <div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Third_Card}}" width="200px">
+                </div>
+            </td>
         </tr>
         <tr class="Table_Strochka_Names">
-            <td class="Taro_Name">{{Slovar[First_Card]}}</td>
-            <td class="Taro_Name">{{Slovar[Second_Card]}}</td>
-            <td class="Taro_Name">{{Slovar[Third_Card]}}</td>
+            <td class="Taro_Name">
+                <details>
+                    <summary>{{Slovar[First_Card]}}</summary>
+                    <p>{{first_ai}}</p>
+                </details>
+            </td>
+            <td class="Taro_Name">
+                <details>
+                    <summary>{{Slovar[Second_Card]}}</summary>
+                    <p>{{second_ai}}</p>
+                </details>
+            </td>
+            <td class="Taro_Name">
+                <details>
+                    <summary>{{Slovar[Third_Card]}}</summary>
+                    <p>{{third_ai}}</p>
+                </details>
+            </td>
         </tr>
+        <p>{{general_ai}}</p>
     </table>
 </div>
 
@@ -23,18 +49,43 @@
 <br>
 <br>
 
-<div class = 'Center_Cards'>
+<div class='Center_Cards'>
     <table class="Table_Card">
         <tr class="Table_Strochka">
-            <td align="center"><div class='Table_Card_Content'><img src="../static/tarot_for_Andrey/{{First_Card_Old}}" width="200px"></div></td>
-            <td align="center"><div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Second_Card_Old}}" width="200px"></div></td>
-            <td align="center"><div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Third_Card_Old}}" width="200px"></div></td>
+            <td align="center">
+                <div class='Table_Card_Content'><img src="../static/tarot_for_Andrey/{{First_Card_Old}}" width="200px">
+                </div>
+            </td>
+            <td align="center">
+                <div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Second_Card_Old}}" width="200px">
+                </div>
+            </td>
+            <td align="center">
+                <div class="Table_Card_Content"><img src="../static/tarot_for_Andrey/{{Third_Card_Old}}" width="200px">
+                </div>
+            </td>
         </tr>
         <tr class="Table_Strochka_Names">
-            <td class="Taro_Name">{{Slovar[First_Card_Old]}}</td>
-            <td class="Taro_Name">{{Slovar[Second_Card_Old]}}</td>
-            <td class="Taro_Name">{{Slovar[Third_Card_Old]}}</td>
+            <td class="Taro_Name">
+                <details>
+                    <summary>{{Slovar[First_Card_Old]}}</summary>
+                    <p>{{first_ai_old}}</p>
+                </details>
+            </td>
+            <td class="Taro_Name">
+                <details>
+                    <summary>{{Slovar[Second_Card_Old]}}</summary>
+                    <p>{{second_ai_old}}</p>
+                </details>
+            </td>
+            <td class="Taro_Name">
+                <details>
+                    <summary>{{Slovar[Third_Card_Old]}}</summary>
+                    <p>{{third_ai_old}}</p>
+                </details>
+            </td>
         </tr>
+        <p>{{general_ai_old}}</p>
     </table>
 </div>
 
