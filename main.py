@@ -80,8 +80,11 @@ def reg():
 
 @app.route('/login', methods=['GET', 'POST'])
 def log():
-    if session["login"]:
-        return redirect("/Profile")
+    try:
+        if session["login"]:
+            return redirect("/Profile")
+    except KeyError:
+        pass
     form = LoginForm()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
