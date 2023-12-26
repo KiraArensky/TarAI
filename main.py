@@ -80,7 +80,7 @@ def reg():
 
 @app.route('/login', methods=['GET', 'POST'])
 def log():
-    if session:
+    if session["login"]:
         return redirect("/Profile")
     form = LoginForm()
     if form.validate_on_submit():
