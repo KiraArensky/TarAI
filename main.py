@@ -37,6 +37,11 @@ def not_found(error):
     return redirect("/login")
 
 
+@app.errorhandler(500)
+def not_found(error):
+    return render_template('error500.html')
+
+
 @app.route('/')
 def main():
     return render_template('Menu.html')
@@ -75,6 +80,8 @@ def reg():
 
 @app.route('/login', methods=['GET', 'POST'])
 def log():
+    if session:
+        return redirect("/Profile")
     form = LoginForm()
     if form.validate_on_submit():
         db_sess = db_session.create_session()
@@ -288,7 +295,7 @@ def user():
 def logout():
     logout_user()
     session.clear()
-    return redirect("/")
+    return redirect("/login")
 
 
 # @app.route('/donate')
