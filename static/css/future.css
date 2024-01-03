@@ -1,126 +1,126 @@
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 @font-face {
-  font-family: "Arsenica";
-  src: url("../for_css/ArsenicaTrial-Bold.ttf");
+    font-family: "Arsenica";
+    src: url("../for_css/ArsenicaTrial-Bold.ttf");
 }
 
 body {
-	background-color: #202020;
-	background-image: url("../for_css/images/bg_login.png");
-	background-size: cover;
-	color: white;
-	font-family: "Arsenica";
-	font-size: 32px;
+    background-color: #202020;
+    background-image: url("../for_css/images/bg_login.png");
+    background-size: cover;
+    color: white;
+    font-family: "Arsenica";
+    font-size: 32px;
 }
 
 a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .header {
-padding-top: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10vh;
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12vh;
 }
 
 
 .porno_logo {
-  width: 340px;
+    width: 340px;
 }
 
 #one, #two, #three {
-  margin-right: 3vw;
+    margin-right: 3vw;
 }
 
 .header #three {
-  width: 90px;
-  margin-right: 6vw;
+    width: 90px;
+    margin-right: 6vw;
 }
 
 p {
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: 4vh;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 4vh;
 }
 
 .list {
-  display: flex;
+    display: flex;
     justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 10vh;
+    margin-top: 50px;
+    margin-bottom: 10vh;
 }
 
 .list div {
-  font-family: 36px;
-  margin-left: 20px;
-  background-color: white;
-  opacity: 70%;
-  border-radius: 10px;
-  color: black;
-  text-align: center;
-  padding: 33px 18px 44px 18px;
+    font-family: 36px;
+    margin-left: 20px;
+    background-color: white;
+    opacity: 70%;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    padding: 33px 18px 44px 18px;
 }
 
 input[type="text"] {
-	border-radius: 18px;
-	width: 70vw;
-	height: 120px;
-	opacity: 80%;
-	box-sizing: border-box;
-	margin-left: 15vw;
-	margin-bottom: 10vh;
-	padding-left: 20px;
+    border-radius: 18px;
+    width: 70vw;
+    height: 120px;
+    opacity: 80%;
+    box-sizing: border-box;
+    margin-left: 15vw;
+    margin-bottom: 10vh;
+    padding-left: 20px;
 }
 
 .btns {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
 }
 
 .btns input {
-  background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
-	border-radius: 28px;
-	padding: 14px 8% 15px 8%;
-	font-family: "Arsenica";
-	font-size: 32px;
+    background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
+    border-radius: 28px;
+    padding: 14px 8% 15px 8%;
+    font-family: "Arsenica";
+    font-size: 32px;
 }
 
 .bord {
-	position: fixed;
-	z-index:-1;
+    position: fixed;
+    z-index: -1;
 }
 
 
 #one1 {
-	margin: 3% 0 0 6%
+    margin: 3% 0 0 6%
 }
 
 #two2 {
-	transform: rotate(90deg);
-	margin: 3% 0 0 84vw;
+    transform: rotate(90deg);
+    margin: 3% 0 0 84vw;
 }
 
 #three3 {
-	transform: rotate(180deg);
-	margin: 86vh 0 0 84vw;
+    transform: rotate(180deg);
+    margin: 86vh 0 0 84vw;
 }
 
 #four {
-	transform: rotate(-90deg);
-	margin: 86vh 0 0 6%;
+    transform: rotate(-90deg);
+    margin: 86vh 0 0 6%;
 }
 
 .downl {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
- }
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

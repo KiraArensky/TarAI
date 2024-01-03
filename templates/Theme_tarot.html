@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <title></title>
-    <link rel="stylesheet" href="../static/css/taro.css">
-</head>
-<body>
+{% block css%}taro.css{% endblock %}
+
+{% block content %}
 <div class="header">
     <a href="/Future" id="one">Предсказание</a>
     <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
@@ -101,7 +98,5 @@
         <p>{{general_ai_old}}</p>
     </table>
 </div>
+{% endblock %}
 
-
-</body>
-</html>

@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <title>TarAI</title>
-    <link rel="stylesheet" href="static/css/taro_mode.css">
-</head>
-<body>
+{% block css%}taro_mode.css{% endblock %}
 
-<div class="header">
-    <a href="/Future" id="one">Предсказание</a>
-    <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
-    <a href="/tarot" id="three">Режим таролога</a>
-    <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
-</div>
+{% block content %}
 <br>
 <div id="loading-icon" style="text-align: center">
     <p>Ошибка 500 😔</p>
@@ -23,6 +13,4 @@
     <img src="static/error_pic/error500.gif">
     <br>
 </div>
-
-</body>
-</html>
+{% endblock %}

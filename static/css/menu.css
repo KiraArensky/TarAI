@@ -1,64 +1,67 @@
 * {
- margin: 0;
- padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 @font-face {
- font-family: "Arsenica";
- src: url("../for_css/ArsenicaTrial-Bold.ttf");
+    font-family: "Arsenica";
+    src: url("../for_css/ArsenicaTrial-Bold.ttf");
 }
 
 a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
+
 .tg {
     color: #2AABEE;
 }
 
 body {
- background-color: #202020;
- background-image: url("../for_css/images/bg_login.png");
- background-size: cover;
- color: white;
- font-family: "Arsenica";
- font-size: 32px;
- margin-top: auto;
- margin-bottom: auto;
+    background-color: #202020;
+    background-image: url("../for_css/images/bg_login.png");
+    background-size: cover;
+    color: white;
+    font-family: "Arsenica";
+    font-size: 32px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 
 .heading:first-of-type {
-	font-size: 64px;
+    font-size: 64px;
 }
 
 .logo a {
-	display: flex;
-	justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .logo a img {
-  width: 30vw;
+    margin-top: 2vh;
+    width: 340px;
+    margin-bottom: 12vh;
 }
 
 p {
-  margin-left: 25%;
-  width: 50vw;
-  text-align: center;
+    margin-left: 25%;
+    width: 50vw;
+    text-align: center;
 }
 
 .btns {
-  display: flex;
-  justify-content: center;
-  margin: 5% 0;
+    display: flex;
+    justify-content: center;
+    margin: 5% 0;
 }
 
 .btns a {
-  background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
-	border-radius: 28px;
-	padding: 14px 8% 15px 8%;
+    background: linear-gradient(180deg, rgba(255, 213, 65, 1), rgba(255, 179, 65, 0.83));
+    border-radius: 28px;
+    padding: 14px 8% 15px 8%;
 }
 
 .comand {
-  margin-top: 5%;
+    margin-top: 5%;
 }

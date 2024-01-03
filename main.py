@@ -155,19 +155,6 @@ def ai():
 @app.route('/Relation')
 @login_required
 def Relation():
-    # prompt = request.form['prompt']
-    #
-    # # Асинхронный запрос к OpenAI API
-    # response = requests.post(
-    #     'https://api.openai.com/v1/engines/turbo/completions',
-    #     json={'prompt': prompt},
-    #     headers={'Authorization': f'Bearer {"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"}'}
-    # )
-    #
-    # result = response.json()
-    #
-    # # Возвращаем результат в формате JSON
-    # return jsonify(result)
     Freddy_Old = RandomCard()
     a = Freddy_Old[0]
     b = Freddy_Old[1]
@@ -299,13 +286,6 @@ def logout():
     logout_user()
     session.clear()
     return redirect("/login")
-
-
-# @app.route('/donate')
-# @login_required
-# def donate():
-#     im_donate(session['login'])
-#     return redirect("Donate.html")
 
 
 if __name__ == '__main__':

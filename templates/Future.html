@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>TarAI</title>
-    <link rel="stylesheet" href="static/css/future.css">
-</head>
-<body>
-<img src="static/for_css/images/bord.svg" alt="" id="one1" class="bord">
-<img src="static/for_css/images/bord.svg" alt="" id="two2" class="bord">
-<img src="static/for_css/images/bord.svg" alt="" id="three3" class="bord">
-<img src="static/for_css/images/bord.svg" alt="" id="four" class="bord">
-<div class="header">
-    <a href="/Future" id="one">Предсказание</a>
-    <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
-    <a href="/tarot" id="three">Режим таролога</a>
-    <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
-</div>
+{% extends 'base.html' %}
+
+{% block css%}future.css{% endblock %}
+
+{% block content %}
 <div id="content-block">
     <p>Выберите тему</p>
     <p>расклада и предсказания</p>
@@ -59,5 +46,4 @@
       }
 
 </script>
-</body>
-</html>
+{% endblock %}

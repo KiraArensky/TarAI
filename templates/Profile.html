@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>TarAI</title>
-    <link rel="stylesheet" href="static/css/profile.css">
-</head>
+{% extends 'base.html' %}
 
-<div class="header">
-    <a href="/Future" id="one">Предсказание</a>
-    <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
-    <a href="/tarot" id="three">Режим таролога</a>
-    <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
-</div>
+{% block css%}profile.css{% endblock %}
+
+{% block content %}
 <div>
     <div class="row">
         <div class="col-sm">
@@ -37,9 +28,8 @@
     </div>
 </div>
 <hr>
-<a href="#">Донат</a>
+<a href="https://yoomoney.ru/to/4100118148718990">Донат</a>
 <hr>
-</body>
 <script>
     document.getElementById('submit').style.display = 'none';
     function submitForm() {
@@ -47,4 +37,4 @@
       document.getElementById('submit').style.display = 'block';
       }
  </script>
-</html>
+{% endblock %}

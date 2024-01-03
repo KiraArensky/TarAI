@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <title></title>
-    <link rel="stylesheet" href="../static/css/taro.css">
-</head>
-<body>
-<div class="header">
-    <a href="/Future" id="one">Предсказание</a>
-    <a href="/" id="two"><img class="porno_logo" src="static/for_css/images/Logo.svg" alt=""></a>
-    <a href="/tarot" id="three">Режим таролога</a>
-    <a href="/Profile"><img src="static/for_css/images/profile.svg" alt=""></a>
-</div>
+{% block css%}taro_mode.css{% endblock %}
 
+{% block content %}
 <div class='Center_Cards'>
     <p>Расклад карт на день</p><br>
     <table class="Table_Card">
@@ -101,7 +91,4 @@
         <p>{{general_ai_old}}</p>
     </table>
 </div>
-
-
-</body>
-</html>
+{% endblock %}
