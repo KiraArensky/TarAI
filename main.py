@@ -96,10 +96,10 @@ def log():
             session['name'] = user.name
             session['picture'] = user.picture
             return redirect('/Profile')
-        return render_template('log.html',
+        return render_template('Log.html',
                                message="Неправильный логин или пароль",
                                form=form)
-    return render_template('log.html', title='Авторизация', form=form)
+    return render_template('Log.html', title='Авторизация', form=form)
 
 
 @app.route('/menu', methods=['GET', 'POST'])
@@ -310,4 +310,4 @@ def logout():
 
 if __name__ == '__main__':
     db_session.global_init("db/TarAi_Data.db")
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=80)

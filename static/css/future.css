@@ -117,3 +117,10 @@ input[type="text"] {
 	transform: rotate(-90deg);
 	margin: 86vh 0 0 6%;
 }
+
+.downl {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
